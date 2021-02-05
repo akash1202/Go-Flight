@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="colorPrimary">#0277bd</color>
+    <color name="colorPrimaryDark">#004c8c</color>
+    <color name="colorAccent">#0277bd</color>
+    <color name="textColor">#121212</color>
+    <color name="deeppurple">#7c4dff</color>
+    <color name="yellow">#ffb300</color>
+    <color name="green1">#00bfa5</color>
+    <color name="pink">#D242EC</color>
+    <color name="red2">#F73E7C</color>
+    <color name="lightgray">#c1c1c1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="damgood">#E3FFA3</color>
+    <color name="fullWhite">#C6C6C6</color>
+    <color name="lightWhite">#F5F5F3</color>
+    <color name="cardBack">#FFF3F390</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+
+    <color name="colorGray0">#FBFAFA</color>
+    <color name="colorGray1">#e4e4e4</color>
+    <color name="colorGray2">#CACACA</color>
+    <color name="colorGray3">#7B7A7A</color>
+
+    <color name="colorRed">#990C1C</color>
+    <color name="colorGreen">#4CAF50</color>
+    <color name="admincolor">#1EAAF1</color>
+    <color name="backgroundbest">#E7F1FA</color>
+    <color name="red">#03A9F4</color>
+
+
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.goflight">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ResetPassword"></activity>
+        <activity android:name=".admin_add_hotel" />
+        <activity android:name=".admin_HotelList" />
+        <activity android:name=".admin_route_list" /> <!-- android:theme="@style/Theme.GOFlight" -->
+        <activity android:name=".admin_CustomerList" />
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".HotelList" />
+        <activity android:name=".BookingList" />
+        <activity android:name=".admin_AddRoute" />
+        <activity android:name=".CustomerList" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".AdminLoginActivity" />
+        <activity android:name=".NavUserActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
