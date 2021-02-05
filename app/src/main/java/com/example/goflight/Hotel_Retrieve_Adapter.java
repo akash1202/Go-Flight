@@ -52,7 +52,7 @@ public class Hotel_Retrieve_Adapter extends FirebaseRecyclerAdapter<hotelmodel,H
             public void onClick(View view) {
                 AlertDialog.Builder builder=new AlertDialog.Builder(holder.hotelname.getContext(),R.style.MyDialogstyle);
                 builder.setTitle("Delete Hotel Information ");
-                builder.setMessage("  Do you want to delete this Hotel Information ?  ");
+                builder.setMessage("  Do you want to delete this Hotel Information ??  ");
                 builder.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
