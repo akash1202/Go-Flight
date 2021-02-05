@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/colorGray0"
+    tools:context=".NavUserActivity">
+
+    <LinearLayout
+
+        android:layout_gravity="center_vertical"
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/nav_btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/circle_green"
+            android:padding="10dp"
+            android:text="Register Now"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="24dp" />
+
+        <Button
+            android:textColor="@color/colorWhite"
+            android:id="@+id/nav_btn_login"
+            android:background="@drawable/circle_green"
+            android:layout_margin="10dp"
+            android:textSize="24dp"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:text="Login Now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/circle_green"
+            android:id="@+id/nav_btn_admin_login"
+            android:layout_margin="10dp"
+            android:textSize="24dp"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:text="Admin Login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+</LinearLayout>
