@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin_AddRoute"
+    android:orientation="vertical"
+    android:background="@color/colorGray0"
+    android:padding="10dp">
+
+  <!--  <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+
+
+        <TextView
+            android:id="@+id/tv_register_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:gravity="end"
+            android:textColor="@android:color/black"
+            android:textSize="15dp"
+            />
+
+    </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Route"
+            android:layout_gravity="center"
+            android:textColor="@color/admincolor"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/edt_RouteID"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="25dp"
+            android:paddingLeft="15dp"
+            android:inputType="text"
+            android:textColorHint="@color/fullWhite"
+            android:elevation="5dp"
+            android:hint="Your RouteID..."
+            android:background="@drawable/btn"
+            />
+        <EditText
+            android:id="@+id/edt_DepartureProvince"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="25dp"
+            android:paddingLeft="15dp"
+            android:inputType="text"
+            android:textColorHint="@color/fullWhite"
+            android:elevation="5dp"
+            android:hint="Your Departure Province..."
+            android:background="@drawable/btn"
+            />
+
+        <EditText
+            android:id="@+id/edt_DepartureCity"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="25dp"
+            android:paddingLeft="15dp"
+            android:inputType="text"
+            android:textColorHint="@color/fullWhite"
+            android:elevation="5dp"
+            android:hint="Your Departure City..."
+            android:background="@drawable/btn"
+            />
+        <EditText
+            android:id="@+id/edt_DepartureAirport"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="25dp"
+            android:paddingLeft="15dp"
+            android:inputType="text"
+            android:textColorHint="@color/fullWhite"
+            android:elevation="5dp"
+            android:hint="Your Departure Airport..."
+            android:background="@drawable/btn"
+            />
+        <EditText
+            android:id="@+id/edt_ArrivalProvince"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="25dp"
+            android:paddingLeft="15dp"
+            android:inputType="text"
+            android:textColorHint="@color/fullWhite"
+            android:elevation="5dp"
+            android:hint="Your Arrival Province..."
+            android:background="@drawable/btn"
+            />
+        <EditText
+            android:id="@+id/edt_ArrivalCity"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="25dp"
+            android:paddingLeft="15dp"
+            android:inputType="text"
+            android:textColorHint="@color/fullWhite"
+            android:elevation="5dp"
+            android:hint="Your Arrival City..."
+            android:background="@drawable/btn"
+            />
+
+        <EditText
+            android:id="@+id/edt_ArrivalAirport"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="25dp"
+            android:paddingLeft="15dp"
+            android:inputType="text"
+            android:textColorHint="@color/fullWhite"
+            android:elevation="5dp"
+            android:hint="Your Arrival Airport..."
+            android:background="@drawable/btn"
+            />
+        <Button
+            android:id="@+id/route_btn"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:text="Add"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:layout_marginTop="25dp"
+            android:elevation="5dp"
+            android:background="@drawable/circle_admincolor"
+            />
+
+    </LinearLayout>
+</LinearLayout>
