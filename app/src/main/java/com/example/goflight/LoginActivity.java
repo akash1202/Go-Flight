@@ -24,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     private String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     TextView tv_ForgotPassword;
 
+
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
