@@ -1,3 +1,98 @@
 <resources>
-    <string name="app_name">GOFlight</string>
+    <string name="app_name">Flight Booking</string>
+
+
+    <string name="upload_image">UPLOAD IMAGE</string>
+
+    <string name="read_file">This app needs access to your file storage so that it can read photos.</string>
+
+
+    <string-array name="airways">
+        <item>Select Airways</item>
+        <item>Indian Airways</item>
+        <item>British Airways</item>
+        <item>Arab Airways</item>
+    </string-array>
+
+
+    <string-array name="days">
+        <item>Select Days</item>
+        <item>Mon - Tues</item>
+        <item>Tues - Wed</item>
+        <item>Wed -Thur</item>
+        <item>Thur -Fri</item>
+        <item>Fri -Sat</item>
+        <item>Sat -Sun</item>
+    </string-array>
+
+    <string-array name="ampm">
+        <item>AM</item>
+        <item>PM</item>
+    </string-array>
+
+    <string-array name="source">
+        <item>Toronto</item>
+        <item>Vancouver</item>
+        <item>Saskatoon</item>
+        <item>SK</item>
+        <item>Canada</item>
+        <item>Charlottetown</item>
+        <item>Halifax</item>
+        <item>Quebec</item>
+    </string-array>
+
+    <string-array name="destination">
+        <item>Calgary</item>
+        <item>British Columbia</item>
+        <item>Vancouver</item>
+        <item>BC</item>
+        <item>Canada YVR</item>
+        <item>Winnipeg</item>
+        <item>Montreal</item>
+        <item>India</item>
+    </string-array>
+
+    <string-array name="adults">
+        <item>Adults</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+
+    <string-array name="childrens">
+        <item>Childrens</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="classtype">
+        <item>Economy</item>
+        <item>Business class</item>
+        <item>Premium class</item>
+        <item>Economy class</item>
+    </string-array>
+
+
+    <string-array name="currency">
+        <item>CAD</item>
+        <item>RUPEE</item>
+        <item>DOLLER</item>
+    </string-array>
+
+    <string-array name="route">
+        <item>Select Route</item>
+        <item>One Way</item>
+        <item>Two Way</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
