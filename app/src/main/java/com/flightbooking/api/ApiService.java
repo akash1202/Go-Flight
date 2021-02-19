@@ -1,8 +1,6 @@
 package com.flightbooking.api;
 
 
-import com.flightbooking.model.HotelInfoPojo;
-import com.flightbooking.model.MyProfilePojo;
 import com.flightbooking.model.ResponseData;
 import com.flightbooking.model.RouteInfoPojo;
 
