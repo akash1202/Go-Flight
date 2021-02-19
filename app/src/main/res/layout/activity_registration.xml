@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv1"
+            android:text="Firstname"
+            android:layout_marginTop="14dp"
+            android:textColor="#A76464"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/et_fname"
+            android:background="@drawable/edittext_rounded"
+            android:hint="Enter Your First Name"
+            android:padding="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:textColorHint="#C5BFC2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv11"
+            android:text="Lastname"
+            android:layout_marginTop="14dp"
+            android:textColor="#A76464"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/et_lname"
+            android:background="@drawable/edittext_rounded"
+            android:hint="Enter Your Last Name"
+            android:padding="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:textColorHint="#C5BFC2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+        <TextView
+            android:id="@+id/tv2"
+            android:text="Phone No"
+            android:textColor="#A76464"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/et_phno"
+            android:background="@drawable/edittext_rounded"
+            android:hint="Mobile Number"
+            android:inputType="number"
+            android:padding="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:textColorHint="#C5BFC2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+        <TextView
+            android:id="@+id/tvemail"
+            android:text="EmailID"
+            android:textColor="#A76464"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/et_EmailID"
+            android:background="@drawable/edittext_rounded"
+            android:hint="Email ID"
+            android:padding="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:textColorHint="#C5BFC2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/tv5"
+            android:text="Password"
+            android:textColor="#A76464"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:background="@drawable/edittext_rounded"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:textColorHint="#C5BFC2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+        <Button
+            android:id="@+id/btn_reg"
+            android:text="Register"
+            android:layout_gravity="right"
+            android:layout_margin="15dp"
+            android:textColor="#fff"
+            android:background="@drawable/button_rounded"
+            android:layout_width="150dp"
+            android:layout_height="40dp" />
+
+
+    </LinearLayout>
+</ScrollView>
