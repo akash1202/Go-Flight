@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.flightbooking.R;
 import com.flightbooking.api.ApiService;
 import com.flightbooking.api.RetroClient;
-import com.flightbooking.model.AvailableFlightsPojo;
 
 import java.util.ArrayList;
 import java.util.List;
