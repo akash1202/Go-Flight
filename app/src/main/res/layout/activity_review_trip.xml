@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cdtripreview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#fff"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5ssp">
+
+
+            <TextView
+                android:id="@+id/tvSourceDest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Montreal -Delhi"
+                android:textSize="@dimen/_16ssp"
+                android:textColor="#F6CD50" />
+
+
+            <TextView
+                android:id="@+id/tvTimings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvSourceDest"
+                android:layout_marginLeft="@dimen/_13sdp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="4:00Am - 2.45PM"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="#000" />
+
+
+            <TextView
+                android:id="@+id/tvDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTimings"
+                android:layout_marginLeft="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_4ssp"
+                android:fontFamily="@font/poppinsmedium"
+                android:textSize="@dimen/_13ssp"
+                android:text="Tue,Feb 25th"
+                android:textColor="#000" />
+
+
+            <TextView
+                android:id="@+id/tvAirways"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvDay"
+                android:layout_marginLeft="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_4ssp"
+                android:layout_marginBottom="@dimen/_13ssp"
+                android:fontFamily="@font/poppinsmedium"
+                android:textSize="@dimen/_13ssp"
+                android:text="Eithad Airways"
+                android:textColor="#F6CD50" />
+
+
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_below="@+id/cdtripreview"
+        android:id="@+id/cdPriceEconomy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#fff"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5ssp">
+
+
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:layout_marginLeft="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/poppinsmedium"
+                android:textSize="@dimen/_17ssp"
+                android:text="CA $515"
+                android:textColor="#000" />
+
+
+            <TextView
+                android:id="@+id/tvCabineconomy"
+                android:layout_below="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/tvPrice"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:layout_marginLeft="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_10ssp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Cabin : Economy"
+                android:textColor="#000" />
+
+
+            <TextView
+                android:id="@+id/tvCancle"
+                android:layout_below="@+id/tvCabineconomy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:layout_marginLeft="@dimen/_13sdp"
+                android:layout_marginBottom="@dimen/_7ssp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Cancelation Not Available"
+                android:textColor="#000" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_below="@+id/cdPriceEconomy"
+        android:id="@+id/cdDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#fff"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5ssp">
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/tvAdults"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/tvPrice"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:layout_marginLeft="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_15ssp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Cabin : Economy"
+                android:textColor="#000" />
+
+
+            <TextView
+                android:id="@+id/tvChildrens"
+                android:layout_below="@+id/tvAdults"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_25sdp"
+                android:layout_marginLeft="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_10ssp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Cancelation Not Available"
+                android:layout_marginBottom="@dimen/_4ssp"
+                android:textColor="#000" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <Button
+             android:id="@+id/btnCheckout"
+             android:layout_width="@dimen/_90sdp"
+             android:layout_height="40dp"
+             android:layout_below="@+id/cdDetails"
+             android:layout_alignParentRight="true"
+             android:layout_marginLeft="@dimen/_15sdp"
+             android:layout_marginTop="@dimen/_20ssp"
+             android:layout_marginRight="@dimen/_15sdp"
+             android:layout_marginBottom="@dimen/_15sdp"
+             android:background="@drawable/button1_rounded"
+             android:fontFamily="@font/poppinsmedium"
+             android:text="Check out"
+             android:textAllCaps="false" />
+
+
+
+
+</RelativeLayout>
