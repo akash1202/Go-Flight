@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.flightbooking.R;
+import com.flightbooking.activies.VacationDetailsActivity;
+import com.flightbooking.model.HotelInfoPojo;
 
 import java.util.List;
 

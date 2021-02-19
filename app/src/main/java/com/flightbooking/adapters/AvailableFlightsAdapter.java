@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.flightbooking.R;
 import com.flightbooking.activies.ReviewTripActivity;
+import com.flightbooking.model.AvailableFlightsPojo;
 
 import java.util.List;
 
