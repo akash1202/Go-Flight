@@ -8,7 +8,6 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.flightbooking.R;
-import com.flightbooking.adapters.VacationPackageAdapter;
 import com.flightbooking.model.VacationPackagePojo;
 
 import java.util.ArrayList;
