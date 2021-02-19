@@ -15,6 +15,26 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activies.TwoWayFlightActivity"></activity>
+        <activity android:name=".activies.OneWayFlightActivity" />
+        <activity android:name=".activies.ForgotPasswordActivity"/>
+        <activity android:name=".activies.FlightBookingActivity"/>
+        <activity android:name=".activies.ReviewTripActivity" />
+        <activity android:name=".activies.VacationDetailsActivity" />
+        <activity android:name=".activies.AvailableFlightsActivity" />
+        <activity android:name=".activies.HotelInfoActivity" />
+        <activity android:name=".activies.RouteInfoActivity" />
+        <activity android:name=".activies.VacationPackageActivity" />
+        <activity android:name=".activies.AddRouteActivity" />
+        <activity android:name=".activies.GetCustomerProfileActivity" />
+        <activity android:name=".activies.GuestActivity" />
+        <activity android:name=".activies.ViewCustomersActivity" />
+        <activity android:name=".activies.AddHotelActivity" />
+        <activity android:name=".activies.CustomerDasboardActivity" />
+        <activity android:name=".activies.AdminDashboardActivity" />
+        <activity android:name=".activies.RegistrationActivity" />
+        <activity android:name=".activies.CustomerLoginActivity" />
+        <activity android:name=".activies.AdminLoginActivity" />
         <activity android:name=".activies.MainActivity" />
         <activity android:name=".activies.SplashActivity">
             <intent-filter>
