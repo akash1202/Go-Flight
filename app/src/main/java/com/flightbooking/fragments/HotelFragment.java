@@ -2,10 +2,13 @@ package com.flightbooking.fragments;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,6 +25,7 @@ import com.flightbooking.model.HotelInfoPojo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,6 +36,8 @@ public class HotelFragment extends Fragment {
     ListView list_view;
     ProgressDialog progressDialog;
     Button btnAddHotel;
+    EditText et_search;
+    HotelFragmentAdapter hotelFragmentAdapter;
     View view;
 
 
@@ -47,9 +53,29 @@ public class HotelFragment extends Fragment {
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Hotels");
 
         list_view = (ListView) view.findViewById(R.id.list_view);
+        et_search = (EditText)view.findViewById(R.id.et_search);
 
         hotelInfo = new ArrayList<>();
         getHotelInfo();
+
+        et_search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable arg0) {
+                // TODO Auto-generated method stub
+                String text = et_search.getText().toString().toLowerCase(Locale.getDefault());
+                hotelFragmentAdapter.searchHotel(text);
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+                // TODO Auto-generated method stub
+            }
+        });
 
 
         return view;
@@ -69,7 +95,9 @@ public class HotelFragment extends Fragment {
                     Toast.makeText(getContext(), "No data found", Toast.LENGTH_SHORT).show();
                 } else {
                     hotelInfo = response.body();
-                    list_view.setAdapter(new HotelFragmentAdapter(hotelInfo, getContext()));
+                    hotelFragmentAdapter=new HotelFragmentAdapter(hotelInfo,getContext());
+                    list_view.setAdapter(hotelFragmentAdapter);
+                    //list_view.setAdapter(new HotelFragmentAdapter(hotelInfo, getContext()));
 
                 }
             }
