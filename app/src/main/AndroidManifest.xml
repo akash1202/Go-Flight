@@ -29,7 +29,6 @@
         <activity android:name=".activies.GetCustomerProfileActivity" />
         <activity android:name=".activies.GuestActivity" />
         <activity android:name=".activies.ViewCustomersActivity" />
-        <activity android:name=".activies.AddHotelActivity" />
         <activity android:name=".activies.CustomerDasboardActivity" />
         <activity android:name=".activies.AdminDashboardActivity" />
         <activity android:name=".activies.RegistrationActivity" />
