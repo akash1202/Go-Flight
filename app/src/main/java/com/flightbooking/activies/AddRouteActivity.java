@@ -27,8 +27,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AddRouteActivity extends AppCompatActivity {
-    EditText etSource,etDestination,etAirport,etPrice;
-    Spinner spinAirways,spinFromAmpm,spinToAmpm,spinTotalDays,spinRoute;
+    EditText etAirport,etPrice;
+    Spinner spinAirways,spinFromAmpm,spinToAmpm,spinTotalDays,spinRoute,spinStops,spinTotalHours,etSource,etDestination;
     TextView tvFromTime,tvToTime;
     Button btnAddHotel;
     ProgressDialog pd;
@@ -42,8 +42,8 @@ public class AddRouteActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        etSource=(EditText)findViewById(R.id.etSource);
-        etDestination=(EditText)findViewById(R.id.etDestination);
+        etSource=(Spinner) findViewById(R.id.etSource);
+        etDestination=(Spinner)findViewById(R.id.etDestination);
         etAirport=(EditText)findViewById(R.id.etAirport);
         etPrice=(EditText)findViewById(R.id.etPrice);
 
@@ -52,6 +52,9 @@ public class AddRouteActivity extends AppCompatActivity {
         spinToAmpm=(Spinner)findViewById(R.id.spinToAmpm);
         spinTotalDays=(Spinner)findViewById(R.id.spinTotalDays);
         spinRoute=(Spinner)findViewById(R.id.spinRoute);
+
+        spinStops=(Spinner)findViewById(R.id.spinStops);
+        spinTotalHours=(Spinner)findViewById(R.id.spinTotalHours);
 
         tvFromTime=(TextView)findViewById(R.id.tvFromTime);
         tvFromTime.setOnClickListener(new View.OnClickListener() {
@@ -89,8 +92,8 @@ public class AddRouteActivity extends AppCompatActivity {
         pd.setTitle("Please wait,Data is being submit...");
         pd.show();
         ApiService apiService = RetroClient.getRetrofitInstance().create(ApiService.class);
-        Call<ResponseData> call = apiService.addroutes(etSource.getText().toString(),etDestination.getText().toString(),etAirport.getText().toString(),
-                spinAirways.getSelectedItem().toString(),fromtime,totime,spinTotalDays.getSelectedItem().toString(),spinRoute.getSelectedItem().toString(),
+        Call<ResponseData> call = apiService.addroutes(etSource.getSelectedItem().toString(),etDestination.getSelectedItem().toString(),etAirport.getText().toString(),
+                spinAirways.getSelectedItem().toString(),fromtime,totime,spinTotalDays.getSelectedItem().toString(),spinRoute.getSelectedItem().toString(),spinStops.getSelectedItem().toString(),spinTotalHours.getSelectedItem().toString(),
                 etPrice.getText().toString());
 
         call.enqueue(new Callback<ResponseData>() {

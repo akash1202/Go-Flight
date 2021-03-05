@@ -18,7 +18,7 @@
             android:text="Source"
             android:textColor="#A76464" />
 
-        <EditText
+        <Spinner
             android:id="@+id/etSource"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,9 +26,11 @@
             android:layout_marginTop="4dp"
             android:layout_marginRight="13dp"
             android:background="@drawable/edittext_rounded"
-            android:hint="Source"
-            android:padding="8dp"
-            android:textColorHint="#C5BFC2" />
+            android:entries="@array/source"
+            android:padding="@dimen/_8ssp"
+            android:scrollbars="none"
+            android:singleLine="true"
+            android:spinnerMode="dropdown"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -38,7 +40,7 @@
             android:text="Destination"
             android:textColor="#A76464" />
 
-        <EditText
+        <Spinner
             android:id="@+id/etDestination"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,9 +48,11 @@
             android:layout_marginTop="4dp"
             android:layout_marginRight="13dp"
             android:background="@drawable/edittext_rounded"
-            android:hint="Destination"
-            android:padding="8dp"
-            android:textColorHint="#C5BFC2" />
+            android:entries="@array/destination"
+            android:padding="@dimen/_8ssp"
+            android:scrollbars="none"
+            android:singleLine="true"
+            android:spinnerMode="dropdown" />
 
 
         <TextView
@@ -184,6 +188,58 @@
 
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="14dp"
+            android:text="Choose Stops and Hours"
+            android:textColor="#A76464" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <Spinner
+                android:id="@+id/spinStops"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="13dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_rounded"
+                android:entries="@array/stops"
+                android:padding="@dimen/_8ssp"
+                android:scrollbars="none"
+                android:singleLine="true"
+                android:spinnerMode="dropdown" />
+
+
+
+            <Spinner
+                android:id="@+id/spinTotalHours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="13dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_rounded"
+                android:entries="@array/totalhours"
+                android:padding="@dimen/_8ssp"
+                android:scrollbars="none"
+                android:singleLine="true"
+                android:spinnerMode="dropdown" />
+
+
+        </LinearLayout>
+
+
 
         <TextView
             android:layout_width="wrap_content"
