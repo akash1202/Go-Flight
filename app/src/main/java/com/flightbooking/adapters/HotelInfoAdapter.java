@@ -49,7 +49,7 @@ public class HotelInfoAdapter extends BaseAdapter {
         ImageView hotelImage=(ImageView)obj2.findViewById(R.id.hotelImage);
         Glide.with(cnt).load(imgUrl+hotelInfo.get(pos).getPhoto()).into(hotelImage);
 
-      //  Toast.makeText(cnt,hotelInfo.get(pos).getPhoto().toString(),Toast.LENGTH_LONG).show();
+        Toast.makeText(cnt,hotelInfo.get(pos).getPhoto().toString(),Toast.LENGTH_LONG).show();
 
         TextView tvHotelname = (TextView) obj2.findViewById(R.id.tvHotelname);
         tvHotelname.setText("Name: "+hotelInfo.get(pos).getName());
