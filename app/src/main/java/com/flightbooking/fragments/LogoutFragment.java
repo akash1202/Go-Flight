@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.flightbooking.R;
-import com.flightbooking.activies.MainActivity;
 
 
 public class LogoutFragment extends Fragment {

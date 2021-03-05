@@ -11,7 +11,6 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 
 import com.flightbooking.R;
-import com.flightbooking.activies.MyTicketDetailsActivity;
 import com.flightbooking.model.BookingsPojo;
 
 import java.util.List;

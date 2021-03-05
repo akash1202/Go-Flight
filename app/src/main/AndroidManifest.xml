@@ -22,7 +22,6 @@
         <activity android:name=".activies.ReviewTripActivity" />
         <activity android:name=".activies.VacationDetailsActivity" />
         <activity android:name=".activies.AvailableFlightsActivity" />
-        <activity android:name=".activies.HotelInfoActivity" />
         <activity android:name=".activies.RouteInfoActivity" />
         <activity android:name=".activies.VacationPackageActivity" />
         <activity android:name=".activies.AddRouteActivity" />
@@ -34,7 +33,6 @@
         <activity android:name=".activies.RegistrationActivity" />
         <activity android:name=".activies.CustomerLoginActivity" />
         <activity android:name=".activies.AdminLoginActivity" />
-        <activity android:name=".activies.MainActivity" />
         <activity android:name=".activies.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
