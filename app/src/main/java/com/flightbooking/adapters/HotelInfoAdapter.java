@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.flightbooking.R;
-import com.flightbooking.model.HotelInfoPojo;
 
 import java.util.List;
 

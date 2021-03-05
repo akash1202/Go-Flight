@@ -3,9 +3,6 @@ package com.flightbooking.api;
 
 import com.flightbooking.model.AvailableFlightsPojo;
 import com.flightbooking.model.BookingsPojo;
-import com.flightbooking.model.HotelInfoPojo;
-import com.flightbooking.model.MyProfilePojo;
-import com.flightbooking.model.ResponseData;
 import com.flightbooking.model.RouteInfoPojo;
 
 import java.util.List;

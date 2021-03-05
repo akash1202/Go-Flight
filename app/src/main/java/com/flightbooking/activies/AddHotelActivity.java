@@ -6,9 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,10 +19,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.flightbooking.R;
-import com.flightbooking.Utils;
 import com.flightbooking.api.ApiService;
-import com.flightbooking.api.RetroClient;
-import com.flightbooking.model.ResponseData;
 
 import java.io.File;
 import java.util.HashMap;
