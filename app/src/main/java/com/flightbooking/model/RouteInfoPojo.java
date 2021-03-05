@@ -33,6 +33,14 @@ public class RouteInfoPojo {
     @SerializedName("type")
     public String type;
 
+    @SerializedName("layour")
+    private String layour;
+
+    @SerializedName("stops")
+    private String stops;
+
+
+
     public String getAirport() {
         return airport;
     }
@@ -111,5 +119,21 @@ public class RouteInfoPojo {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getLayour() {
+        return layour;
+    }
+
+    public void setLayour(String layour) {
+        this.layour = layour;
+    }
+
+    public String getStops() {
+        return stops;
+    }
+
+    public void setStops(String stops) {
+        this.stops = stops;
     }
 }

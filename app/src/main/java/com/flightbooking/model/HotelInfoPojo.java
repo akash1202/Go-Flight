@@ -28,6 +28,9 @@ public class HotelInfoPojo {
     @SerializedName("province")
     public String province;
 
+    @SerializedName("web")
+    public String web;
+
     public String getCity() {
         return city;
     }
@@ -90,5 +93,13 @@ public class HotelInfoPojo {
 
     public void setProvince(String province) {
         this.province = province;
+    }
+
+    public String getWeb() {
+        return web;
+    }
+
+    public void setWeb(String web) {
+        this.web = web;
     }
 }
