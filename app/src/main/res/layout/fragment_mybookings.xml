@@ -7,16 +7,6 @@
     tools:context=".activies.HotelInfoActivity">
 
 
-    <EditText
-        android:id="@+id/et_search"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_35sdp"
-        android:layout_margin="@dimen/_6sdp"
-        android:background="@drawable/search_edittext"
-        android:drawableLeft="@drawable/ic_baseline_search_24"
-        android:drawablePadding="@dimen/_3sdp"
-        android:hint="Search" />
-
 
     <ListView
         android:layout_below="@+id/et_search"
