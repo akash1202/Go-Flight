@@ -1,14 +1,14 @@
 package com.flightbooking.activies;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.flightbooking.R;
 
@@ -28,7 +28,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
         cdCustomerProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(AdminDashboardActivity.this,GetCustomerProfileActivity.class);
+                Intent intent=new Intent(AdminDashboardActivity.this, GetCustomerProfileActivity.class);
                 startActivity(intent);
             }
         });
@@ -36,7 +36,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
         cdHoteInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(AdminDashboardActivity.this,HotelInfoActivity.class);
+                Intent intent=new Intent(AdminDashboardActivity.this, HotelInfoActivity.class);
                 startActivity(intent);
             }
         });
@@ -45,7 +45,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
         cdRoute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(AdminDashboardActivity.this,RouteInfoActivity.class);
+                Intent intent=new Intent(AdminDashboardActivity.this, RouteInfoActivity.class);
                 startActivity(intent);
             }
         });
@@ -54,7 +54,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
         cdFlightBooking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(AdminDashboardActivity.this,FlightBookingActivity.class);
+                Intent intent=new Intent(AdminDashboardActivity.this, FlightBookingActivity.class);
                 startActivity(intent);
             }
         });
@@ -62,7 +62,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AdminDashboardActivity.this,AdminLoginActivity.class));
+                startActivity(new Intent(AdminDashboardActivity.this, AdminLoginActivity.class));
                 finish();
             }
         });
@@ -77,7 +77,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id== R.id.menuLogout){
-            startActivity(new Intent(AdminDashboardActivity.this,AdminLoginActivity.class));
+            startActivity(new Intent(AdminDashboardActivity.this, AdminLoginActivity.class));
             finish();
 
         }

@@ -12,7 +12,7 @@ import com.flightbooking.R;
 import com.flightbooking.adapters.FlightBookingAdapter;
 import com.flightbooking.api.ApiService;
 import com.flightbooking.api.RetroClient;
-import com.flightbooking.model.RouteInfoPojo;
+import com.flightbooking.model.BookingsPojo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class FlightBookingActivity extends AppCompatActivity {
-    List<RouteInfoPojo> availableFlightsPojo;
+    List<BookingsPojo> bookingsPojos;
     ListView list_view;
     ProgressDialog progressDialog;
 
@@ -37,19 +37,19 @@ public class FlightBookingActivity extends AppCompatActivity {
 
         list_view = (ListView) findViewById(R.id.list_view);
 
-        availableFlightsPojo = new ArrayList<>();
-        getRouteInfo();
+        bookingsPojos = new ArrayList<>();
+        getBookings();
     }
-    public void getRouteInfo(){
+    public void getBookings(){
         progressDialog = new ProgressDialog(FlightBookingActivity.this);
         progressDialog.setMessage("Loading....");
         progressDialog.show();
 
         ApiService service = RetroClient.getRetrofitInstance().create(ApiService.class);
-        Call<List<RouteInfoPojo>> call = service.getroutes();
-        call.enqueue(new Callback<List<RouteInfoPojo>>() {
+        Call<List<BookingsPojo>> call = service.getbooking();
+        call.enqueue(new Callback<List<BookingsPojo>>() {
             @Override
-            public void onResponse(Call<List<RouteInfoPojo>> call, Response<List<RouteInfoPojo>> response) {
+            public void onResponse(Call<List<BookingsPojo>> call, Response<List<BookingsPojo>> response) {
                 progressDialog.dismiss();
                 if(response.body()==null){
                     Toast.makeText(FlightBookingActivity.this,"No data found",Toast.LENGTH_SHORT).show();
@@ -58,12 +58,12 @@ public class FlightBookingActivity extends AppCompatActivity {
                     Toast.makeText(FlightBookingActivity.this,"No data found",Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    availableFlightsPojo= response.body();
-                    list_view.setAdapter(new FlightBookingAdapter(availableFlightsPojo, FlightBookingActivity.this));
+                    bookingsPojos= response.body();
+                    list_view.setAdapter(new FlightBookingAdapter(bookingsPojos, FlightBookingActivity.this));
                 }
             }
             @Override
-            public void onFailure(Call<List<RouteInfoPojo>> call, Throwable t) {
+            public void onFailure(Call<List<BookingsPojo>> call, Throwable t) {
                 progressDialog.dismiss();
                 Toast.makeText(FlightBookingActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }

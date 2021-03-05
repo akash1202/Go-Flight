@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,19 +25,20 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AddRouteActivity extends AppCompatActivity {
+public class EditRouteActivity extends AppCompatActivity {
+
     EditText etAirport,etPrice;
     Spinner spinAirways,spinFromAmpm,spinToAmpm,spinTotalDays,spinRoute,spinStops,spinTotalHours,etSource,etDestination;
     TextView tvFromTime,tvToTime;
-    Button btnAddHotel;
+    Button btnEditRoute;
     ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_new_route);
+        setContentView(R.layout.activity_edit_route);
 
-        getSupportActionBar().setTitle("Add Route");
+        getSupportActionBar().setTitle("Edit Route");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -71,61 +71,94 @@ public class AddRouteActivity extends AppCompatActivity {
                 setmToTimePicker();
             }
         });
+       // carname=getIntent().getStringExtra("carname");
 
+//        intent.putExtra("source",routeInfoPojo.get(pos).getSource());
+//        intent.putExtra("destination",routeInfoPojo.get(pos).getDestination());
+//        intent.putExtra("airport",routeInfoPojo.get(pos).getAirport());
+//        intent.putExtra("airways",routeInfoPojo.get(pos).getAirways());
+//        intent.putExtra("frmtim",routeInfoPojo.get(pos).getFrmtim());
+//        intent.putExtra("totim",routeInfoPojo.get(pos).getTotim());
+//        intent.putExtra("tdays",routeInfoPojo.get(pos).getTdays());
+//        intent.putExtra("type",routeInfoPojo.get(pos).getType());
+//        intent.putExtra("stops",routeInfoPojo.get(pos).getStops());
+//        intent.putExtra("layour",routeInfoPojo.get(pos).getLayour());
+//        intent.putExtra("rid",routeInfoPojo.get(pos).getRid());
+//        intent.putExtra("price",routeInfoPojo.get(pos).getPrice());
 
-        btnAddHotel=(Button)findViewById(R.id.btnAddHotel);
-        btnAddHotel.setOnClickListener(new View.OnClickListener() {
+        tvFromTime.setText(getIntent().getStringExtra("frmtim"));
+        tvToTime.setText(getIntent().getStringExtra("totim"));
+        etAirport.setText(getIntent().getStringExtra("airport"));
+        etPrice.setText(getIntent().getStringExtra("price"));
+
+        btnEditRoute=(Button)findViewById(R.id.btnAddHotel);
+        btnEditRoute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                addRoute();
+                editRoute();
             }
         });
     }
 
-    public  void addRoute() {
+    public  void editRoute() {
 
         String fromtime=tvFromTime.getText().toString()+spinFromAmpm.getSelectedItem().toString();
         String totime=tvToTime.getText().toString()+spinToAmpm.getSelectedItem().toString();
 
-        pd= new ProgressDialog(AddRouteActivity.this);
+        String rid=getIntent().getStringExtra("rid");
+
+        pd= new ProgressDialog(EditRouteActivity.this);
         pd.setTitle("Please wait,Data is being submit...");
         pd.show();
         ApiService apiService = RetroClient.getRetrofitInstance().create(ApiService.class);
-        Call<ResponseData> call = apiService.addroutes(etSource.getSelectedItem().toString(),etDestination.getSelectedItem().toString(),etAirport.getText().toString(),
-                spinAirways.getSelectedItem().toString(),fromtime,totime,spinTotalDays.getSelectedItem().toString(),spinRoute.getSelectedItem().toString(),spinStops.getSelectedItem().toString(),spinTotalHours.getSelectedItem().toString(),
+        Call<ResponseData> call = apiService.editroute(etSource.getSelectedItem().toString(),
+                etDestination.getSelectedItem().toString(),
+                etAirport.getText().toString(),
+                spinAirways.getSelectedItem().toString(),
+                fromtime,
+                totime,
+                spinTotalDays.getSelectedItem().toString(),
+                spinRoute.getSelectedItem().toString(),
+                spinStops.getSelectedItem().toString(),
+                spinTotalHours.getSelectedItem().toString(),
+                rid,
                 etPrice.getText().toString());
+
+        //                @Query("source") String source,
+//                @Query("destination") String destination,
+//                @Query("airport") String airport,
+//                @Query("airways") String airways,
+//                @Query("frmtim") String frmtim,
+//                @Query("totim") String totim,
+//                @Query("tdays") String tdays,
+//                @Query("type") String type,
+//                @Query("stops") String stops,
+//                @Query("layour") String layour,
+//                @Query("rid") String rid,
+//                @Query("price") String price);
+
 
         call.enqueue(new Callback<ResponseData>() {
             @Override
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                 pd.dismiss();
                 if (response.body().status.equals("true")) {
-                    startActivity(new Intent(AddRouteActivity.this, RouteInfoActivity.class));
+                    startActivity(new Intent(EditRouteActivity.this, RouteInfoActivity.class));
                     finish();
                 } else {
-                    Toast.makeText(AddRouteActivity.this, response.body().message, Toast.LENGTH_LONG).show();
+                    Toast.makeText(EditRouteActivity.this, response.body().message, Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseData> call, Throwable t) {
                 pd.dismiss();
-                Toast.makeText(AddRouteActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(EditRouteActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
     public void setmFromTimePicker() {
 
@@ -134,7 +167,7 @@ public class AddRouteActivity extends AppCompatActivity {
         int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
         int minute = mcurrentTime.get(Calendar.MINUTE);
         TimePickerDialog mTimePicker;
-        mTimePicker = new TimePickerDialog(AddRouteActivity.this, new TimePickerDialog.OnTimeSetListener() {
+        mTimePicker = new TimePickerDialog(EditRouteActivity.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                 tvFromTime.setText(selectedHour + ":" + selectedMinute);
@@ -152,7 +185,7 @@ public class AddRouteActivity extends AppCompatActivity {
         int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
         int minute = mcurrentTime.get(Calendar.MINUTE);
         TimePickerDialog mTimePicker;
-        mTimePicker = new TimePickerDialog(AddRouteActivity.this, new TimePickerDialog.OnTimeSetListener() {
+        mTimePicker = new TimePickerDialog(EditRouteActivity.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                 tvToTime.setText(selectedHour + ":" + selectedMinute);
@@ -162,6 +195,4 @@ public class AddRouteActivity extends AppCompatActivity {
         mTimePicker.show();
 
     }
-
-
 }

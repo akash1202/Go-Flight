@@ -1,7 +1,5 @@
 package com.flightbooking.activies;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -14,10 +12,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.flightbooking.R;
 import com.flightbooking.Utils;
 import com.flightbooking.api.ApiService;
 import com.flightbooking.api.RetroClient;
+import com.flightbooking.model.ResponseData;
 
 import retrofit2.Call;
 import retrofit2.Callback;

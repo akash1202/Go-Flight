@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.flightbooking.R;
 import com.flightbooking.api.ApiService;
 import com.flightbooking.api.RetroClient;
+import com.flightbooking.model.ResponseData;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -56,6 +57,12 @@ public class RegistrationActivity extends AppCompatActivity {
                     Toast.makeText(RegistrationActivity.this, "Please Enter Mobile no..", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                if(et_phno.getText().toString().length() > 9){
+                    Toast.makeText(RegistrationActivity.this, "Phone no Should be 10 digits.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 if(et_EmailID.getText().toString().isEmpty()){
                     Toast.makeText(RegistrationActivity.this, "Please Enter Email Id..", Toast.LENGTH_SHORT).show();
                     return;
@@ -65,9 +72,23 @@ public class RegistrationActivity extends AppCompatActivity {
                     return;
                 }
 
+                if(et_password.getText().length()<5){
+                    Toast.makeText(RegistrationActivity.this, "Password length min 6 charaters", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+             /*   if(et_password.getText().toString().length() >5){
+                    Toast.makeText(RegistrationActivity.this, "Password Should be 6 digits", Toast.LENGTH_SHORT).show();
+                    return;
+                }*/
+
                 customerRegistration();
             }
         });
+    }
+    public boolean validCellPhone(String number)
+    {
+        return android.util.Patterns.PHONE.matcher(number).matches();
     }
     private void customerRegistration() {
         String firstname = et_fname.getText().toString();

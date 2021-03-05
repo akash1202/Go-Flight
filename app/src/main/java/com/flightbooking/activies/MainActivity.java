@@ -1,11 +1,11 @@
 package com.flightbooking.activies;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.flightbooking.R;
 
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         btn_guest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, GuestActivity.class));
+                startActivity(new Intent(MainActivity.this, GuestDashboardActivity.class));
 
 
             }

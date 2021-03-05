@@ -1,8 +1,5 @@
 package com.flightbooking.activies;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -18,8 +15,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.flightbooking.R;
 import com.flightbooking.api.ApiService;
+import com.flightbooking.model.ResponseData;
 
 import java.io.File;
 import java.util.HashMap;
@@ -153,7 +154,7 @@ public class AddHotelActivity extends AppCompatActivity implements EasyPermissio
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                 pd.dismiss();
                 Toast.makeText(AddHotelActivity.this, "Hotel Added successfully. ", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(AddHotelActivity.this,HotelInfoActivity.class));
+                startActivity(new Intent(AddHotelActivity.this, HotelInfoActivity.class));
                 finish();
             }
 

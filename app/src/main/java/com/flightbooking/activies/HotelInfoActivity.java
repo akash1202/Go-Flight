@@ -15,6 +15,7 @@ import com.flightbooking.R;
 import com.flightbooking.adapters.HotelInfoAdapter;
 import com.flightbooking.api.ApiService;
 import com.flightbooking.api.RetroClient;
+import com.flightbooking.model.HotelInfoPojo;
 
 import java.util.ArrayList;
 import java.util.List;
