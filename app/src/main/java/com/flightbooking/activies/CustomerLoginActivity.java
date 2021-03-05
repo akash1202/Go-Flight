@@ -26,7 +26,7 @@ import retrofit2.Response;
 
 public class CustomerLoginActivity extends AppCompatActivity {
     EditText et_USERNAME,et_PWD;
-    TextView tv_forgetpwd,tv_reg_here;
+    TextView tv_forgetpwd,tv_reg_here,tvforgot;
     Button btnLogin;
     ProgressDialog pd;
 

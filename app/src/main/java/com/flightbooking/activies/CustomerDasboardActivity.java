@@ -12,6 +12,7 @@ import com.flightbooking.R;
 import com.flightbooking.fragments.HomeFragment;
 import com.flightbooking.fragments.HotelFragment;
 import com.flightbooking.fragments.LogoutFragment;
+import com.flightbooking.fragments.MyBookingsFragment;
 import com.flightbooking.fragments.MyProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -77,7 +78,7 @@ public class CustomerDasboardActivity extends AppCompatActivity {
                                 selectedFragment = HotelFragment.hotelFragment();
                                 break;
                             case R.id.booking:
-                                selectedFragment = HotelFragment.hotelFragment();
+                                selectedFragment = MyBookingsFragment.myBookingsFragment();
                                 break;
 
                             case R.id.logout:

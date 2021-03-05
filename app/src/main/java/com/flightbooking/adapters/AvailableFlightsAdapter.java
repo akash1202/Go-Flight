@@ -79,6 +79,7 @@ public class AvailableFlightsAdapter extends BaseAdapter {
                 intent.putExtra("classtype",classtype);
                 intent.putExtra("adult",adult);
                 intent.putExtra("children",children);
+                intent.putExtra("rid",availableFlightsPojo.get(pos).getRid());
                 cnt.startActivity(intent);
 
 

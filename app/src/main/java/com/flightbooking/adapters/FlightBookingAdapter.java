@@ -1,30 +1,34 @@
 package com.flightbooking.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
+
 import com.flightbooking.R;
-import com.flightbooking.model.RouteInfoPojo;
+import com.flightbooking.activies.MyTicketDetailsActivity;
+import com.flightbooking.model.BookingsPojo;
 
 import java.util.List;
 
 public class FlightBookingAdapter extends BaseAdapter {
-    List<RouteInfoPojo> availableFlightsPojo;
+    List<BookingsPojo> bookingsPojos;
     Context cnt;
 
-    public FlightBookingAdapter(List<RouteInfoPojo> availableFlightsPojo, Context cnt) {
-        this.availableFlightsPojo = availableFlightsPojo;
+    public FlightBookingAdapter(List<BookingsPojo> availableFlightsPojo, Context cnt) {
+        this.bookingsPojos = availableFlightsPojo;
 
         this.cnt = cnt;
     }
 
     @Override
     public int getCount() {
-        return availableFlightsPojo.size();
+        return bookingsPojos.size();
     }
 
     @Override
@@ -43,41 +47,44 @@ public class FlightBookingAdapter extends BaseAdapter {
         View obj2 = obj1.inflate(R.layout.adapter_flight_booking, null);
 
         TextView tvTimings = (TextView) obj2.findViewById(R.id.tvTimings);
-        tvTimings.setText(availableFlightsPojo.get(pos).getFrmtim()+" - "+availableFlightsPojo.get(pos).getTotim());
+        tvTimings.setText(bookingsPojos.get(pos).getFrmtim()+" - "+bookingsPojos.get(pos).getTotim());
 
         TextView tvDay = (TextView) obj2.findViewById(R.id.tvDay);
-        tvDay.setText(availableFlightsPojo.get(pos).getTdays());
+        tvDay.setText(bookingsPojos.get(pos).getTdays());
 
         TextView tvPrice = (TextView) obj2.findViewById(R.id.tvPrice);
-        tvPrice.setText(availableFlightsPojo.get(pos).getPrice()+"CAD");
+        tvPrice.setText(bookingsPojos.get(pos).getTotal()+"CAD");
 
         TextView tvSourceDest = (TextView) obj2.findViewById(R.id.tvSourceDest);
-        tvSourceDest.setText(availableFlightsPojo.get(pos).getSource() +" - "+availableFlightsPojo.get(pos).getDestination());
+        tvSourceDest.setText(bookingsPojos.get(pos).getSource() +" - "+bookingsPojos.get(pos).getDestination());
 
         TextView tvoneway = (TextView) obj2.findViewById(R.id.tvoneway);
-        tvoneway.setText(availableFlightsPojo.get(pos).getType());
+        tvoneway.setText(bookingsPojos.get(pos).getType());
 
         TextView tvAirways = (TextView) obj2.findViewById(R.id.tvAirways);
-        tvAirways.setText(availableFlightsPojo.get(pos).getAirways());
+        tvAirways.setText(bookingsPojos.get(pos).getAirways());
 
-       /* Button btnBook=(Button)obj2.findViewById(R.id.btnBook);
-        btnBook.setOnClickListener(new View.OnClickListener() {
+
+        CardView cd_bookings=(CardView) obj2.findViewById(R.id.cd_bookings);
+        cd_bookings.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(cnt, ReviewTripActivity.class);
-                intent.putExtra("sourcedest",availableFlightsPojo.get(pos).getSource() +" - "+availableFlightsPojo.get(pos).getDestination());
-                intent.putExtra("timings",availableFlightsPojo.get(pos).getFrmtim()+" - "+availableFlightsPojo.get(pos).getTotim());
-                intent.putExtra("day",availableFlightsPojo.get(pos).getTdays());
-                intent.putExtra("airways",availableFlightsPojo.get(pos).getAirways());
-                intent.putExtra("price",availableFlightsPojo.get(pos).getPrice());
-                intent.putExtra("classtype",classtype);
-                intent.putExtra("adult",adult);
-                intent.putExtra("children",children);
+            public void onClick(View view) {
+                Intent intent=new Intent(cnt, MyTicketDetailsActivity.class);
+                intent.putExtra("name",bookingsPojos.get(pos).getName());
+                intent.putExtra("bid",bookingsPojos.get(pos).getBid());
+
+                intent.putExtra("time",bookingsPojos.get(pos).getFrmtim()+" - "+bookingsPojos.get(pos).getTotim());
+                intent.putExtra("type",bookingsPojos.get(pos).getType());
+                intent.putExtra("place",bookingsPojos.get(pos).getSource()+" - "+bookingsPojos.get(pos).getDestination());
+                intent.putExtra("air",bookingsPojos.get(pos).getAirways());
+
+                intent.putExtra("stops",bookingsPojos.get(pos).getStops());
+                intent.putExtra("lay",bookingsPojos.get(pos).getLayour());
+                intent.putExtra("extra",bookingsPojos.get(pos).getExtra());
+                intent.putExtra("total",bookingsPojos.get(pos).getTotal());
                 cnt.startActivity(intent);
-
-
             }
-        });*/
+        });
 
 
         return obj2;
