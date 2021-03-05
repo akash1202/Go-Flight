@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.flightbooking.R;
-import com.flightbooking.activies.CustomerLoginActivity;
+import com.flightbooking.activies.MainActivity;
 
 
 public class LogoutFragment extends Fragment {
@@ -39,7 +39,7 @@ public class LogoutFragment extends Fragment {
         img_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), CustomerLoginActivity.class));
+                startActivity(new Intent(getContext(), MainActivity.class));
                 ((Activity)getActivity()).finish();
             }
         });
