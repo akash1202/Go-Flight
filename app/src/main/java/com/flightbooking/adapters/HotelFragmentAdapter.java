@@ -15,17 +15,24 @@ import com.flightbooking.R;
 import com.flightbooking.activies.VacationDetailsActivity;
 import com.flightbooking.model.HotelInfoPojo;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class HotelFragmentAdapter extends BaseAdapter {
-    List<HotelInfoPojo> hotelInfo;
+    List<HotelInfoPojo> hotelInfo,searchhotel;
     Context cnt;
     String imgUrl="http://bookingflight.info/flight/";
 
 
     public HotelFragmentAdapter(List<HotelInfoPojo> hotelInfo, Context cnt) {
-        this.hotelInfo = hotelInfo;
+       /* this.hotelInfo = hotelInfo;
+        this.cnt = cnt;*/
+
+        this.searchhotel=hotelInfo;
         this.cnt = cnt;
+        this.hotelInfo = new ArrayList<HotelInfoPojo>();
+        this.hotelInfo.addAll(hotelInfo);
     }
 
     @Override
@@ -82,12 +89,28 @@ public class HotelFragmentAdapter extends BaseAdapter {
                 intent.putExtra("city",hotelInfo.get(pos).getCity());
                 intent.putExtra("photo",imgUrl+hotelInfo.get(pos).getPhoto());
                 intent.putExtra("price",hotelInfo.get(pos).getPrice());
+                intent.putExtra("web",hotelInfo.get(pos).getWeb());
                 cnt.startActivity(intent);
             }
         });
 
-
         return obj2;
+    }
+    public void searchHotel(String charText)
+    {
+        charText = charText.toLowerCase(Locale.getDefault());
+        hotelInfo.clear();
+        if (charText.length() == 0) {
+            hotelInfo.addAll(searchhotel);
+        } else {
+            for (HotelInfoPojo wp : searchhotel) {
+                if (wp.getCity().toLowerCase(Locale.getDefault()).contains(charText) || wp.getCountry().toLowerCase(Locale.getDefault()).contains(charText) || wp.getPrice().toLowerCase(Locale.getDefault()).contains(charText)
+                        || wp.getName().toLowerCase(Locale.getDefault()).contains(charText)|| wp.getProvince().toLowerCase(Locale.getDefault()).contains(charText)) {
+                    hotelInfo.add(wp);
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 
 
