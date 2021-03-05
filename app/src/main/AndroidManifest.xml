@@ -17,7 +17,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activies.TwoWayFlightActivity"></activity>
         <activity android:name=".activies.OneWayFlightActivity" />
-        <activity android:name=".activies.ForgotPasswordActivity"/>
         <activity android:name=".activies.FlightBookingActivity"/>
         <activity android:name=".activies.ReviewTripActivity" />
         <activity android:name=".activies.VacationDetailsActivity" />
