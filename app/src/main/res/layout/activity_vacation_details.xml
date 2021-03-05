@@ -107,9 +107,9 @@
 
 
             <LinearLayout
-                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
@@ -133,9 +133,9 @@
 
 
             <LinearLayout
-                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
@@ -159,9 +159,9 @@
 
 
             <LinearLayout
-                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
@@ -189,5 +189,50 @@
 
 
     </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cdWebview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cdVacationdetails"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#fff"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_6ssp"
+            android:fontFamily="@font/poppinsmedium"
+            android:gravity="center_horizontal"
+            android:text="Go to Website"
+            android:textColor="#000"
+            android:textSize="@dimen/_16ssp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginBottom="@dimen/_6ssp"
+            android:orientation="vertical">
+
+
+            <WebView
+                android:id="@+id/webview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
 
 </RelativeLayout>

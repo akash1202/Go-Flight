@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".activies.MyTicketDetailsActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="E- Ticket"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:textStyle="bold"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/tvbid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Booking ID : "
+        android:textSize="18dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="0dp"
+        android:textStyle="bold"
+        android:textColor="#000"/>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cd_travel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5ssp">
+
+                <ImageView
+                    android:id="@+id/ll"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/logo"/>
+
+                <TextView
+                    android:layout_toRightOf="@+id/ll"
+                    android:id="@+id/traveller"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_33sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Travellor"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="#000" />
+
+
+                <TextView
+                    android:id="@+id/tvname"
+                    android:layout_toRightOf="@+id/ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/traveller"
+                    android:layout_marginLeft="@dimen/_33sdp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_15ssp"
+                    android:text="Name"
+                    android:textColor="#000" />
+
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cd_dateinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/cd_travel"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5ssp">
+
+
+
+                <TextView
+
+                    android:id="@+id/tvTimings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="4:00Am - 2.45PM"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="#000" />
+
+
+                <TextView
+                    android:id="@+id/tvDay"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvTimings"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_13ssp"
+                    android:text="Mon - Tue"
+                    android:textColor="#000" />
+
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:visibility="gone"
+                    android:layout_marginRight="@dimen/_25sdp"
+                    android:layout_below="@+id/tvTimings"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_16ssp"
+                    android:text="CA $515"
+                    android:textColor="#000" />
+
+
+                <TextView
+                    android:id="@+id/tvSourceDest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvDay"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_13ssp"
+                    android:text="Montreal - Delhi"
+                    android:textColor="#F6CD50" />
+
+
+                <TextView
+                    android:id="@+id/tvoneway"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/_25sdp"
+                    android:layout_below="@+id/tvDay"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_13ssp"
+                    android:text="One way"
+                    android:textColor="#F6CD50" />
+
+
+                <TextView
+                    android:id="@+id/tvAirways"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvSourceDest"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:layout_marginBottom="@dimen/_3ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_13ssp"
+                    android:text="Eithad Airways"
+                    android:textColor="#F6CD50" />
+
+                <TextView
+                    android:id="@+id/tvstops"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvAirways"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:layout_marginBottom="@dimen/_3ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_13ssp"
+                    android:text="Stops : "
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/tvlayour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvstops"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:layout_marginBottom="@dimen/_3ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_13ssp"
+                    android:text="Layour Time : "
+                    android:textColor="#000" />
+
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cd_baggage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:layout_margin="10dp"
+            android:layout_below="@+id/cd_dateinfo"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5ssp">
+
+                <TextView
+
+                    android:id="@+id/tvbaggage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Baggage Policy"
+                    android:textSize="@dimen/_14ssp"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/tvcheckin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvbaggage"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_13ssp"
+                    android:text="Check-In"
+                    android:textStyle="bold"
+                    android:textColor="#F6CD50" />
+
+
+                <TextView
+                    android:id="@+id/tv15kg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/_95sdp"
+                    android:layout_below="@+id/tvbaggage"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_13ssp"
+                    android:text="15 KG / Person"
+                    android:textColor="#000" />
+
+
+                <TextView
+                    android:id="@+id/tvcabin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvcheckin"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:layout_marginBottom="@dimen/_3ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_13ssp"
+                    android:text="Cabin"
+                    android:textStyle="bold"
+                    android:textColor="#F6CD50" />
+
+
+                <TextView
+                    android:id="@+id/tv23kg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/_95sdp"
+                    android:layout_below="@+id/tvcheckin"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_13ssp"
+                    android:text="23 KG / Person"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/tvextra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvcabin"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:layout_marginBottom="@dimen/_3ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_13ssp"
+                    android:text="Extra Weight"
+                    android:textStyle="bold"
+                    android:textColor="#F6CD50" />
+
+
+                <TextView
+                    android:id="@+id/tvextrag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/_95sdp"
+                    android:layout_below="@+id/tv23kg"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_13ssp"
+                    android:text="Yes"
+                    android:textColor="#000" />
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cd_fare"
+            android:layout_below="@+id/cd_baggage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5ssp">
+
+
+
+                <TextView
+
+                    android:id="@+id/tvfare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Total Fare : "
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="#FFC107" />
+
+
+                <TextView
+                    android:id="@+id/tvamount"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tvfare"
+                    android:layout_marginLeft="@dimen/_33sdp"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_15ssp"
+                    android:text="Amount"
+                    android:textColor="#000" />
+
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

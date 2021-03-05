@@ -1,224 +1,388 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<ScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cdtripreview"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="#fff"
-        app:cardCornerRadius="2dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        app:cardPreventCornerOverlap="true">
+        android:layout_height="match_parent">
 
-
-        <RelativeLayout
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cdtripreview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5ssp">
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true">
 
 
-            <TextView
-                android:id="@+id/tvSourceDest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_13sdp"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:fontFamily="@font/poppinsmedium"
-                android:text="Montreal -Delhi"
-                android:textSize="@dimen/_16ssp"
-                android:textColor="#F6CD50" />
-
-
-            <TextView
-                android:id="@+id/tvTimings"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvSourceDest"
-                android:layout_marginLeft="@dimen/_13sdp"
-                android:fontFamily="@font/poppinsmedium"
-                android:text="4:00Am - 2.45PM"
-                android:textSize="@dimen/_13ssp"
-                android:textColor="#000" />
-
-
-            <TextView
-                android:id="@+id/tvDay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvTimings"
-                android:layout_marginLeft="@dimen/_13sdp"
-                android:layout_marginTop="@dimen/_4ssp"
-                android:fontFamily="@font/poppinsmedium"
-                android:textSize="@dimen/_13ssp"
-                android:text="Tue,Feb 25th"
-                android:textColor="#000" />
-
-
-            <TextView
-                android:id="@+id/tvAirways"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvDay"
-                android:layout_marginLeft="@dimen/_13sdp"
-                android:layout_marginTop="@dimen/_4ssp"
-                android:layout_marginBottom="@dimen/_13ssp"
-                android:fontFamily="@font/poppinsmedium"
-                android:textSize="@dimen/_13ssp"
-                android:text="Eithad Airways"
-                android:textColor="#F6CD50" />
+                android:layout_marginTop="@dimen/_5ssp">
+
+
+                <TextView
+                    android:id="@+id/tvSourceDest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Montreal -Delhi"
+                    android:textSize="@dimen/_16ssp"
+                    android:textColor="#F6CD50" />
+
+
+                <TextView
+                    android:id="@+id/tvTimings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvSourceDest"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="4:00Am - 2.45PM"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="#000" />
+
+
+                <TextView
+                    android:id="@+id/tvDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvTimings"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_13ssp"
+                    android:text="Tue,Feb 25th"
+                    android:textColor="#000" />
+
+
+                <TextView
+                    android:id="@+id/tvAirways"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvDay"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_4ssp"
+                    android:layout_marginBottom="@dimen/_13ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_13ssp"
+                    android:text="Eithad Airways"
+                    android:textColor="#F6CD50" />
 
 
 
 
-        </RelativeLayout>
+            </RelativeLayout>
 
 
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_below="@+id/cdtripreview"
-        android:id="@+id/cdPriceEconomy"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="#fff"
-        app:cardCornerRadius="2dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        app:cardPreventCornerOverlap="true">
-
-        <RelativeLayout
+        <androidx.cardview.widget.CardView
+            android:layout_below="@+id/cdtripreview"
+            android:id="@+id/cdPriceEconomy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5ssp">
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true">
 
-
-
-            <TextView
-                android:id="@+id/tvPrice"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/_25sdp"
-                android:layout_marginLeft="@dimen/_13sdp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:fontFamily="@font/poppinsmedium"
-                android:textSize="@dimen/_17ssp"
-                android:text="CA $515"
-                android:textColor="#000" />
-
-
-            <TextView
-                android:id="@+id/tvCabineconomy"
-                android:layout_below="@+id/tvPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:labelFor="@+id/tvPrice"
-                android:layout_marginRight="@dimen/_25sdp"
-                android:layout_marginLeft="@dimen/_13sdp"
-                android:layout_marginTop="@dimen/_10ssp"
-                android:fontFamily="@font/poppinsmedium"
-                android:text="Cabin : Economy"
-                android:textColor="#000" />
-
-
-            <TextView
-                android:id="@+id/tvCancle"
-                android:layout_below="@+id/tvCabineconomy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/_25sdp"
-                android:layout_marginLeft="@dimen/_13sdp"
-                android:layout_marginBottom="@dimen/_7ssp"
-                android:fontFamily="@font/poppinsmedium"
-                android:text="Cancelation Not Available"
-                android:textColor="#000" />
-
-
-        </RelativeLayout>
-
-
-    </androidx.cardview.widget.CardView>
+                android:layout_marginTop="@dimen/_5ssp">
 
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_below="@+id/cdPriceEconomy"
-        android:id="@+id/cdDetails"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="#fff"
-        app:cardCornerRadius="2dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        app:cardPreventCornerOverlap="true">
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:textSize="@dimen/_17ssp"
+                    android:text="CA $515"
+                    android:textColor="#000" />
 
-        <RelativeLayout
+
+                <TextView
+                    android:id="@+id/tvCabineconomy"
+                    android:layout_below="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/tvPrice"
+                    android:layout_marginRight="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Cabin : Economy"
+                    android:textColor="#000" />
+
+
+                <TextView
+                    android:id="@+id/tvCancle"
+                    android:layout_below="@+id/tvCabineconomy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginBottom="@dimen/_7ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Cancelation Not Available"
+                    android:textColor="#000" />
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:layout_below="@+id/cdPriceEconomy"
+            android:id="@+id/tvName"
+            android:text="Name"
+            android:textColor="#A76464"
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_below="@+id/tvName"
+            android:background="@drawable/edittext_rounded"
+            android:hint="Name"
+            android:padding="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:textColorHint="#C5BFC2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+        <TextView
+            android:layout_below="@+id/etName"
+            android:id="@+id/tvPassport"
+            android:text="Passport Number"
+            android:textColor="#A76464"
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/etPassportNumber"
+            android:layout_below="@+id/tvPassport"
+            android:background="@drawable/edittext_rounded"
+            android:hint="Passport"
+            android:padding="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:textColorHint="#C5BFC2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_below="@+id/etPassportNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="14dp"
+            android:text="Date"
+            android:textColor="#A76464" />
+
+        <LinearLayout
+            android:layout_below="@+id/tvDate"
+            android:id="@+id/ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5ssp">
-
-
-
-
-
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tvAdults"
-                android:layout_width="wrap_content"
+                android:id="@+id/tvChooseDate"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:labelFor="@+id/tvPrice"
-                android:layout_marginRight="@dimen/_25sdp"
-                android:layout_marginLeft="@dimen/_13sdp"
-                android:layout_marginTop="@dimen/_15ssp"
-                android:fontFamily="@font/poppinsmedium"
-                android:text="Cabin : Economy"
-                android:textColor="#000" />
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="13dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_rounded"
+                android:hint="Date"
+                android:padding="@dimen/_9ssp"
+                android:singleLine="true" />
 
 
-            <TextView
-                android:id="@+id/tvChildrens"
-                android:layout_below="@+id/tvAdults"
-                android:layout_width="wrap_content"
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_below="@+id/ll"
+            android:id="@+id/tvPassCountry"
+            android:text="Pass Country"
+            android:textColor="#A76464"
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/spinPassCountry"
+            android:layout_below="@+id/tvPassCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="13dp"
+            android:background="@drawable/edittext_rounded"
+            android:entries="@array/passCountry"
+            android:padding="@dimen/_8ssp"
+            android:scrollbars="none"
+            android:singleLine="true"
+            android:spinnerMode="dropdown" />
+
+
+        <TextView
+            android:layout_below="@+id/spinPassCountry"
+            android:id="@+id/tvExtral"
+            android:text="Extra Lugguage"
+            android:textColor="#A76464"
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+
+        <Spinner
+            android:id="@+id/spinExtraLugguage"
+            android:layout_below="@+id/tvExtral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="13dp"
+            android:background="@drawable/edittext_rounded"
+            android:entries="@array/spinLugguage"
+            android:padding="@dimen/_8ssp"
+            android:scrollbars="none"
+            android:singleLine="true"
+            android:spinnerMode="dropdown" />
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_below="@+id/spinExtraLugguage"
+            android:id="@+id/cdDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/_25sdp"
-                android:layout_marginLeft="@dimen/_13sdp"
-                android:layout_marginTop="@dimen/_10ssp"
-                android:fontFamily="@font/poppinsmedium"
-                android:text="Cancelation Not Available"
-                android:layout_marginBottom="@dimen/_4ssp"
-                android:textColor="#000" />
+                android:layout_marginTop="@dimen/_5ssp">
 
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/tvAdults"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/tvPrice"
+                    android:layout_marginRight="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_15ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Adult"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="#000" />
 
 
-    </androidx.cardview.widget.CardView>
-
-
-    <Button
-             android:id="@+id/btnCheckout"
-             android:layout_width="@dimen/_90sdp"
-             android:layout_height="40dp"
-             android:layout_below="@+id/cdDetails"
-             android:layout_alignParentRight="true"
-             android:layout_marginLeft="@dimen/_15sdp"
-             android:layout_marginTop="@dimen/_20ssp"
-             android:layout_marginRight="@dimen/_15sdp"
-             android:layout_marginBottom="@dimen/_15sdp"
-             android:background="@drawable/button1_rounded"
-             android:fontFamily="@font/poppinsmedium"
-             android:text="Check out"
-             android:textAllCaps="false" />
+                <TextView
+                    android:id="@+id/tvChildrens"
+                    android:layout_below="@+id/tvAdults"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:textSize="@dimen/_13ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Children"
+                    android:layout_marginBottom="@dimen/_4ssp"
+                    android:textColor="#000" />
 
 
 
 
-</RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvTotalFair"
+                    android:layout_below="@+id/tvChildrens"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_13sdp"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:text="Total Fair"
+                    android:textSize="@dimen/_13ssp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="@dimen/_4ssp"
+                    android:textColor="#DA1B17" />
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+        <Button
+            android:id="@+id/btnCheckout"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/cdDetails"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20ssp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/button1_rounded"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Check out"
+            android:textAllCaps="false" />
+
+
+
+
+    </RelativeLayout>
+
+</ScrollView>
