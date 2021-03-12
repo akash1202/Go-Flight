@@ -15,11 +15,9 @@
         app:cardCornerRadius="@dimen/_1sdp"
         android:layout_margin="@dimen/_4sdp"
         app:cardBackgroundColor="#34FDFBFB"
-
         app:cardMaxElevation="@dimen/_3sdp">
 
         <LinearLayout
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -27,11 +25,10 @@
             android:orientation="vertical">
 
     <ImageView
-
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:src="@drawable/admin"/>
+        android:src="@drawable/profile_user"/>
 
 
     <TextView
@@ -122,7 +119,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:textStyle="bold"
-        android:background="#9099a2" />
+        android:background="#34FDFBFB" />
 
     </LinearLayout>
 

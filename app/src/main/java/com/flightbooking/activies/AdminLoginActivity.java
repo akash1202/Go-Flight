@@ -84,6 +84,7 @@ public class AdminLoginActivity extends AppCompatActivity {
                     SharedPreferences sharedPreferences = getSharedPreferences(Utils.SHREF, Context.MODE_PRIVATE);
                     SharedPreferences.Editor et=sharedPreferences.edit();
                     et.putString("user_name",et_USERNAME.getText().toString());
+                    et.putBoolean("isAdmin",Boolean.TRUE);
                     et.commit();
                     startActivity(new Intent(AdminLoginActivity.this, AdminDashboardActivity.class));
                     finish();
