@@ -39,8 +39,6 @@ public class RouteInfoPojo {
     @SerializedName("stops")
     private String stops;
 
-
-
     public String getAirport() {
         return airport;
     }

@@ -93,7 +93,7 @@ public class HomeFragment extends Fragment {
                     return;
                 }
                 if(etDeparture.getText().toString().isEmpty()){
-                    Toast.makeText(getContext(), "Please choose departure dete", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Please choose departure date", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -106,7 +106,12 @@ public class HomeFragment extends Fragment {
                     return;
                 }
 
-                if(spinClassType.getSelectedItem().toString().equals("Economy")){
+                if(spinChildern.getSelectedItem().equals("0")&&spinAdult.getSelectedItem().equals("0")){
+                    Toast.makeText(getContext(), "Please choose atleast one passenger", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(spinClassType.getSelectedItem().toString().equals("")){
                     Toast.makeText(getContext(), "Please choose Classtype", Toast.LENGTH_SHORT).show();
                     return;
                 }

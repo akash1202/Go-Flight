@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ import com.flightbooking.R;
 import com.flightbooking.adapters.HotelFragmentAdapter;
 import com.flightbooking.api.ApiService;
 import com.flightbooking.api.RetroClient;
+import com.flightbooking.model.HotelInfoPojo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -94,6 +96,7 @@ public class HotelFragment extends Fragment {
                     Toast.makeText(getContext(), "No data found", Toast.LENGTH_SHORT).show();
                 } else {
                     hotelInfo = response.body();
+                    Log.d("Hotel info---->","response"+hotelInfo.toString());
                     hotelFragmentAdapter=new HotelFragmentAdapter(hotelInfo,getContext());
                     list_view.setAdapter(hotelFragmentAdapter);
                     //list_view.setAdapter(new HotelFragmentAdapter(hotelInfo, getContext()));
