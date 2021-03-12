@@ -20,7 +20,7 @@
             android:fontFamily="@font/graphiksemibold"
             android:gravity="center"
             android:text="Hotel Information"
-            android:textColor="#000"
+            android:textColor="@color/colorPrimary"
             android:textSize="22dp" />
 
         <Button
@@ -30,7 +30,7 @@
             android:layout_below="@+id/tvDate"
             android:layout_margin="15dp"
             android:layout_weight=".5"
-            android:background="#631636"
+            android:background="@color/colorPrimary"
             android:textColor="#fff"
             android:text="+ Add Hotel"
             android:textAllCaps="false" />

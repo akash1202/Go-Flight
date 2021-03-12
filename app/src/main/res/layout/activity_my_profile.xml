@@ -2,6 +2,7 @@
 <ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
+    android:background="@color/colorPrimaryWhite"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
@@ -12,7 +13,7 @@
             android:id="@+id/tv1"
             android:text="Firstname"
             android:layout_marginTop="14dp"
-            android:textColor="#A76464"
+            android:textColor="@color/colorPrimary"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -33,7 +34,7 @@
             android:id="@+id/tv11"
             android:text="Lastname"
             android:layout_marginTop="14dp"
-            android:textColor="#A76464"
+            android:textColor="@color/colorPrimary"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -55,7 +56,7 @@
         <TextView
             android:id="@+id/tv2"
             android:text="Phone No"
-            android:textColor="#A76464"
+            android:textColor="@color/colorPrimary"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -63,7 +64,7 @@
         <EditText
             android:id="@+id/et_phno"
             android:background="@drawable/edittext_rounded"
-            android:hint="Mobil Number"
+            android:hint="Mobile Number"
             android:inputType="number"
             android:padding="8dp"
             android:layout_marginTop="4dp"
@@ -78,7 +79,7 @@
         <TextView
             android:id="@+id/tvemail"
             android:text="EmailID"
-            android:textColor="#A76464"
+            android:textColor="@color/colorPrimary"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -88,6 +89,7 @@
             android:background="@drawable/edittext_rounded"
             android:hint="EmailID"
             android:padding="8dp"
+            android:enabled="false"
             android:layout_marginTop="4dp"
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
@@ -99,7 +101,7 @@
         <TextView
             android:id="@+id/tv5"
             android:text="Password"
-            android:textColor="#A76464"
+            android:textColor="@color/colorPrimary"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

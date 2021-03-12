@@ -31,7 +31,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
         cdCustomerProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(AdminDashboardActivity.this,GetCustomerProfileActivity.class);
+                Intent intent=new Intent(AdminDashboardActivity.this, GetCustomerProfileActivity.class);
                 startActivity(intent);
                 //finish();
             }

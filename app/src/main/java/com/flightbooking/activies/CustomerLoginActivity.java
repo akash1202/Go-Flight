@@ -50,7 +50,6 @@ public class CustomerLoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(CustomerLoginActivity.this, RegistrationActivity.class));
                 finish();
-
             }
         });
 
@@ -66,7 +65,6 @@ public class CustomerLoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if(et_USERNAME.getText().toString().isEmpty()){
                     Toast.makeText(CustomerLoginActivity.this, "Please Enter Username..", Toast.LENGTH_SHORT).show();
                     return;
@@ -76,7 +74,6 @@ public class CustomerLoginActivity extends AppCompatActivity {
                     return;
                 }
                 CustomerloginFunction();
-
             }
         });
     }
