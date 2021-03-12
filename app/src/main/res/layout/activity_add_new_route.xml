@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgg"
+    android:backgroundTint="@color/colorPrimary"
     android:fillViewport="true">
 
     <LinearLayout
@@ -15,10 +16,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="14dp"
-            android:text="Source"
-            android:textColor="#A76464" />
+            android:text="From"
+            android:textColor="@color/colorPrimary" />
 
-        <Spinner
+        <EditText
             android:id="@+id/etSource"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,21 +27,18 @@
             android:layout_marginTop="4dp"
             android:layout_marginRight="13dp"
             android:background="@drawable/edittext_rounded"
-            android:entries="@array/source"
-            android:padding="@dimen/_8ssp"
-            android:scrollbars="none"
-            android:singleLine="true"
-            android:spinnerMode="dropdown"/>
+            android:hint="Source"
+            android:padding="8dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="14dp"
-            android:text="Destination"
-            android:textColor="#A76464" />
+            android:text="To"
+            android:textColor="@color/colorPrimary" />
 
-        <Spinner
+        <EditText
             android:id="@+id/etDestination"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,11 +46,9 @@
             android:layout_marginTop="4dp"
             android:layout_marginRight="13dp"
             android:background="@drawable/edittext_rounded"
-            android:entries="@array/destination"
-            android:padding="@dimen/_8ssp"
-            android:scrollbars="none"
-            android:singleLine="true"
-            android:spinnerMode="dropdown" />
+            android:hint="Destination"
+            android:padding="8dp"
+            android:textColorHint="#C5BFC2" />
 
 
         <TextView
@@ -61,7 +57,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="14dp"
             android:text="Airport"
-            android:textColor="#A76464" />
+            android:textColor="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/etAirport"
@@ -71,7 +67,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginRight="13dp"
             android:background="@drawable/edittext_rounded"
-            android:hint="AirPort"
+            android:hint="Source AirPort"
             android:padding="8dp"
             android:textColorHint="#C5BFC2" />
 
@@ -82,7 +78,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="14dp"
             android:text="Airways"
-            android:textColor="#A76464" />
+            android:textColor="@color/colorPrimary" />
 
         <Spinner
             android:id="@+id/spinAirways"
@@ -104,7 +100,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="14dp"
             android:text="From Time"
-            android:textColor="#A76464" />
+            android:textColor="@color/colorPrimary" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -150,7 +146,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="14dp"
             android:text="To Time"
-            android:textColor="#A76464" />
+            android:textColor="@color/colorPrimary" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -195,7 +191,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="14dp"
             android:text="Choose Stops and Hours"
-            android:textColor="#A76464" />
+            android:textColor="@color/colorPrimary" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -247,7 +243,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="14dp"
             android:text="Total Days"
-            android:textColor="#A76464" />
+            android:textColor="@color/colorPrimary" />
 
         <Spinner
             android:id="@+id/spinTotalDays"
@@ -270,7 +266,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="14dp"
             android:text="Select Route"
-            android:textColor="#A76464" />
+            android:textColor="@color/colorPrimary" />
 
         <Spinner
             android:id="@+id/spinRoute"
@@ -315,7 +311,7 @@
             android:layout_gravity="right"
             android:layout_marginTop="50dp"
             android:layout_marginRight="20dp"
-            android:background="#631636"
+            android:background="@color/colorPrimaryDark"
             android:text="Add Route"
             android:textColor="#fff" />
 

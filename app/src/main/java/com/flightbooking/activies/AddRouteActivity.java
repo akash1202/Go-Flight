@@ -27,8 +27,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AddRouteActivity extends AppCompatActivity {
-    EditText etAirport,etPrice;
-    Spinner spinAirways,spinFromAmpm,spinToAmpm,spinTotalDays,spinRoute,spinStops,spinTotalHours,etSource,etDestination;
+    EditText etSource,etDestination,etAirport,etPrice;
+    Spinner spinAirways,spinFromAmpm,spinToAmpm,spinTotalDays,spinRoute,spinStops,spinTotalHours;
     TextView tvFromTime,tvToTime;
     Button btnAddHotel;
     ProgressDialog pd;
@@ -42,8 +42,8 @@ public class AddRouteActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        etSource=(Spinner) findViewById(R.id.etSource);
-        etDestination=(Spinner)findViewById(R.id.etDestination);
+        etSource=(EditText)findViewById(R.id.etSource);
+        etDestination=(EditText)findViewById(R.id.etDestination);
         etAirport=(EditText)findViewById(R.id.etAirport);
         etPrice=(EditText)findViewById(R.id.etPrice);
 
@@ -77,10 +77,10 @@ public class AddRouteActivity extends AppCompatActivity {
         btnAddHotel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 addRoute();
             }
         });
+
     }
 
     public  void addRoute() {
@@ -88,11 +88,12 @@ public class AddRouteActivity extends AppCompatActivity {
         String fromtime=tvFromTime.getText().toString()+spinFromAmpm.getSelectedItem().toString();
         String totime=tvToTime.getText().toString()+spinToAmpm.getSelectedItem().toString();
 
+
         pd= new ProgressDialog(AddRouteActivity.this);
         pd.setTitle("Please wait,Data is being submit...");
         pd.show();
         ApiService apiService = RetroClient.getRetrofitInstance().create(ApiService.class);
-        Call<ResponseData> call = apiService.addroutes(etSource.getSelectedItem().toString(),etDestination.getSelectedItem().toString(),etAirport.getText().toString(),
+        Call<ResponseData> call = apiService.addroutes(etSource.getText().toString(),etDestination.getText().toString(),etAirport.getText().toString(),
                 spinAirways.getSelectedItem().toString(),fromtime,totime,spinTotalDays.getSelectedItem().toString(),spinRoute.getSelectedItem().toString(),spinStops.getSelectedItem().toString(),spinTotalHours.getSelectedItem().toString(),
                 etPrice.getText().toString());
 
@@ -138,6 +139,11 @@ public class AddRouteActivity extends AppCompatActivity {
             @Override
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                 tvFromTime.setText(selectedHour + ":" + selectedMinute);
+                if(tvFromTime.getText().toString().contains("P") ||tvFromTime.getText().toString().contains("p")){
+                    spinFromAmpm.setSelection(1);
+                }else if(tvFromTime.getText().toString().contains("A")|| tvFromTime.getText().toString().contains("a")){
+                    spinFromAmpm.setSelection(0);
+                }
             }
         }, hour, minute, true);//Yes 24 hour time
         mTimePicker.setTitle("Select Time");
@@ -156,6 +162,11 @@ public class AddRouteActivity extends AppCompatActivity {
             @Override
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                 tvToTime.setText(selectedHour + ":" + selectedMinute);
+                if(tvToTime.getText().toString().contains("P") ||tvToTime.getText().toString().contains("p")){
+                    spinToAmpm.setSelection(1);
+                }else if(tvToTime.getText().toString().contains("A")|| tvToTime.getText().toString().contains("a")){
+                    spinToAmpm.setSelection(0);
+                }
             }
         }, hour, minute, true);//Yes 24 hour time
         mTimePicker.setTitle("Select Time");
