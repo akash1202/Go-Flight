@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,11 +19,13 @@ import com.flightbooking.R;
 import java.util.Calendar;
 
 public class TwoWayFlightActivity extends AppCompatActivity {
-    Spinner spinSource,spinDest,spinAdult,spinChildern,spinClassType,spinPayin;
+    Spinner spinSource,spinDest,spinAdult,spinChildern,spinClassType,spinPayin,spinType;
     Button btnSearchFlights;
+    TextView returnTextView;
     EditText etDeparture,etReturn;
     int mYear, mMonth, mDay;
     String DAY, MONTH, YEAR;
+    long departureDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +42,6 @@ public class TwoWayFlightActivity extends AppCompatActivity {
         spinChildern=(Spinner)findViewById(R.id.spinChildern);
         spinClassType=(Spinner)findViewById(R.id.spinClassType);
         spinPayin=(Spinner)findViewById(R.id.spinPayin);
-
         etDeparture=(EditText)findViewById(R.id.etDeparture);
         etDeparture.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,16 +50,26 @@ public class TwoWayFlightActivity extends AppCompatActivity {
             }
         });
         etReturn=(EditText)findViewById(R.id.etReturn);
+        etDeparture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                departuredate();
+            }
+        });
+        etReturn=(EditText)findViewById(R.id.etReturn);
+        returnTextView=findViewById(R.id.returnTextView);
+        etReturn.setClickable(false);
+        etReturn.setEnabled(false);
         etReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 returnDate();
             }
         });
-
-        etReturn.setFocusable(false);etDeparture.setFocusable(false);
-
+        etReturn.setFocusable(false);
+        etDeparture.setFocusable(false);
+        showOneWay();
+        returnTextView=(TextView) findViewById(R.id.returnTextView);
         Button btnSearchFlights=(Button)findViewById(R.id.btnSearchFlights);
         btnSearchFlights.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +101,10 @@ public class TwoWayFlightActivity extends AppCompatActivity {
                     Toast.makeText(TwoWayFlightActivity.this, "Please choose passengers childrens", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                if(spinChildern.getSelectedItem().equals("0")&&spinAdult.getSelectedItem().equals("0")){
+                    Toast.makeText(TwoWayFlightActivity.this, "Please choose atleast one passenger", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 if(spinClassType.getSelectedItem().toString().equals("Economy")){
                     Toast.makeText(TwoWayFlightActivity.this, "Please choose Classtype", Toast.LENGTH_SHORT).show();
@@ -113,6 +129,17 @@ public class TwoWayFlightActivity extends AppCompatActivity {
         });
     }
 
+    public void showOneWay(){
+        returnTextView.setVisibility(View.GONE);
+        etReturn.setVisibility(View.GONE);
+        etReturn.setEnabled(false);
+    }
+
+    public void showTwoWays(){
+        returnTextView.setVisibility(View.VISIBLE);
+        etReturn.setVisibility(View.VISIBLE);
+    }
+
     public void departuredate() {
 
         final Calendar c = Calendar.getInstance();
@@ -122,20 +149,23 @@ public class TwoWayFlightActivity extends AppCompatActivity {
 
         DatePickerDialog datePickerDialog = new DatePickerDialog(this,
                 new DatePickerDialog.OnDateSetListener() {
-
                     @Override
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
                         DAY = dayOfMonth + "";
                         MONTH = monthOfYear + 1 + "";
                         YEAR = year + "";
-
                         etDeparture.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
-
+                        showTwoWays();
+                        etReturn.setEnabled(true);
+                        Calendar cal = Calendar.getInstance();
+                        cal.set(Calendar.DAY_OF_MONTH, view.getDayOfMonth());
+                        cal.set(Calendar.MONTH, view.getMonth());
+                        cal.set(Calendar.YEAR, view.getYear());
+                        departureDate=cal.getTime().getTime();
                     }
                 }, mYear, mMonth, mDay);
         datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
-
         datePickerDialog.show();
     }
 
@@ -156,13 +186,10 @@ public class TwoWayFlightActivity extends AppCompatActivity {
                         DAY = dayOfMonth + "";
                         MONTH = monthOfYear + 1 + "";
                         YEAR = year + "";
-
                         etReturn.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
-
                     }
                 }, mYear, mMonth, mDay);
-        datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
-
+        datePickerDialog.getDatePicker().setMinDate(departureDate+24*60*60*1000);
         datePickerDialog.show();
     }
 

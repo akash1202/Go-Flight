@@ -1,5 +1,7 @@
 package com.flightbooking.activies;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,15 +30,26 @@ public class VacationDetailsActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Hotel Details");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        final String url=getIntent().getStringExtra("web");
 
         webview=(WebView)findViewById(R.id.webview);
         cdWebview=(CardView)findViewById(R.id.cdWebview);
         cdWebview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                webview.loadUrl(getIntent().getStringExtra("web"));
-
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(browserIntent);
+                /* webview.getSettings().setJavaScriptEnabled(true);
+                webview.getSettings().setLoadWithOverviewMode(true);
+                webview.getSettings().setUseWideViewPort(true);
+                webview.setWebViewClient(new WebViewClient(){
+                    @Override
+                    public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                        view.loadUrl(url);
+                        return true;
+                    }
+                });
+                webview.loadUrl(url);*/
             }
         });
 
