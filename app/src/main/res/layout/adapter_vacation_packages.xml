@@ -39,7 +39,7 @@
                 android:fontFamily="@font/poppinsmedium"
                 android:text="Hyarr Regency Ahemedabad"
                 android:textSize="@dimen/_16ssp"
-                android:textColor="#F4CE5B" />
+                android:textColor="@color/colorPrimary" />
 
 
             <TextView

@@ -81,7 +81,7 @@
                 android:fontFamily="@font/poppinsmedium"
                 android:textSize="@dimen/_13ssp"
                 android:text="Montreal - Delhi"
-                android:textColor="#F6CD50" />
+                android:textColor="@color/colorPrimary" />
 
 
             <TextView
@@ -96,7 +96,7 @@
                 android:fontFamily="@font/poppinsmedium"
                 android:textSize="@dimen/_13ssp"
                 android:text="One way"
-                android:textColor="#F6CD50" />
+                android:textColor="@color/colorPrimary" />
 
 
             <TextView
@@ -110,7 +110,7 @@
                 android:fontFamily="@font/poppinsmedium"
                 android:textSize="@dimen/_13ssp"
                 android:text="Eithad Airways"
-                android:textColor="#F6CD50" />
+                android:textColor="@color/colorPrimary" />
 
 
 
@@ -125,7 +125,7 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginRight="@dimen/_15sdp"
                 android:layout_marginBottom="@dimen/_15sdp"
-                android:background="#9099a2"
+                android:background="@color/colorPrimaryDark"
                 android:textSize="13dp"
                 android:textColor="#fff"
                 android:textStyle="bold"

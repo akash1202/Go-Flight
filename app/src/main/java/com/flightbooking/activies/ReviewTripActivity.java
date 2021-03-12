@@ -95,7 +95,6 @@ public class ReviewTripActivity extends AppCompatActivity {
         tvChooseDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 datepicker();
             }
         });
@@ -162,7 +161,6 @@ public class ReviewTripActivity extends AppCompatActivity {
                     Intent intent = new Intent(ReviewTripActivity.this, PaymentDetailsActivity.class);
                     intent.putExtra("passengername",etName.getText().toString());
                     intent.putExtra("journydate",tvChooseDate.getText().toString());
-                    intent.putExtra("totalfair",total);
                     intent.putExtra("totalfair",total);
                     intent.putExtra("Id",rid);
                     startActivity(intent);
