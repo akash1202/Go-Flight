@@ -2,39 +2,43 @@ package com.flightbooking.activies;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.flightbooking.R;
 
 public class SplashActivity extends AppCompatActivity {
-
+    Animation anim;
+    LinearLayout splashImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        final int ScreenDisplay = 2000;
-        Thread t1=new Thread(){
-            int wait1=0;
-            public void run(){
-                try{
-                    while(wait1<=ScreenDisplay )
-                    {
-                        sleep(100);
-                        wait1+=100;
-                    }
-                }
-                catch(Exception e){
-                    e.printStackTrace();
-                }
-                finally{
-                    Intent i= new Intent(SplashActivity.this, MainActivity.class);
-                    startActivity(i);
-                    finish();
-
-                }
+        splashImage=(LinearLayout)findViewById(R.id.splashImage);
+        final int ScreenDisplay = 3000;
+        anim = AnimationUtils.loadAnimation(this, R.anim.initial_anim);
+        anim.setDuration(3000);
+        anim.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
             }
-        };
-        t1.start();
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                splashImage.setBackground(getResources().getDrawable(R.drawable.splashlogo));
+                startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                finish();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        splashImage.setAnimation(anim);
+        splashImage.animate();
     }
 }
