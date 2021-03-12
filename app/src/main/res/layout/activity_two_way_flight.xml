@@ -27,7 +27,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="14dp"
                     android:text="From"
-                    android:textColor="#A76464" />
+                    android:textColor="@color/colorPrimary" />
 
 
                 <Spinner
@@ -62,7 +62,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="14dp"
                     android:text="To"
-                    android:textColor="#A76464" />
+                    android:textColor="@color/colorPrimary" />
 
 
                 <Spinner
@@ -105,7 +105,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="14dp"
                     android:text="Departure"
-                    android:textColor="#A76464" />
+                    android:textColor="@color/colorPrimary" />
 
                 <EditText
                     android:id="@+id/etDeparture"
@@ -116,7 +116,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginRight="13dp"
                     android:background="@drawable/edittext_rounded"
-                    android:hint="Departure"
+                    android:hint="Departure Date"
                     android:padding="@dimen/_6ssp"
                     android:textColorHint="#C5BFC2" />
 
@@ -131,52 +131,64 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/returnTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="14dp"
                     android:text="Return"
-                    android:textColor="#A76464" />
+                    android:textColor="@color/colorPrimary" />
 
                 <EditText
                     android:id="@+id/etReturn"
                     android:layout_width="match_parent"
-                    android:paddingTop="@dimen/_6ssp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="13dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginRight="13dp"
-                    android:padding="@dimen/_6ssp"
                     android:background="@drawable/edittext_rounded"
-                    android:hint="Departure"
+                    android:hint="Returning Date"
+                    android:padding="@dimen/_6ssp"
+                    android:paddingTop="@dimen/_6ssp"
                     android:textColorHint="#C5BFC2" />
-
             </LinearLayout>
-
-
-
-
         </LinearLayout>
-
-
-
-
-
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="14dp"
             android:text="Passengers"
-            android:textColor="#A76464" />
-
+            android:textColor="@color/colorPrimary" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="14dp"
+                android:layout_weight="1"
+                android:text="Adults"
+                android:textColor="@color/colorPrimary" />
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="14dp"
+                android:layout_weight="1"
+                android:text="Children"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
             <Spinner
                 android:id="@+id/spinAdult"
                 android:layout_width="match_parent"
@@ -206,13 +218,7 @@
                 android:scrollbars="none"
                 android:singleLine="true"
                 android:spinnerMode="dropdown" />
-
-
         </LinearLayout>
-
-
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -223,16 +229,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="14dp"
                     android:text="Class Type"
-                    android:textColor="#A76464" />
-
-
+                    android:textColor="@color/colorPrimary" />
                 <Spinner
                     android:id="@+id/spinClassType"
                     android:layout_width="match_parent"
@@ -249,10 +252,6 @@
                     android:spinnerMode="dropdown" />
 
             </LinearLayout>
-
-
-
-
             <LinearLayout
                 android:layout_weight="1"
                 android:layout_width="match_parent"
@@ -265,8 +264,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="14dp"
                     android:text="Pay In"
-                    android:textColor="#A76464" />
-
+                    android:textColor="@color/colorPrimary" />
 
                 <Spinner
                     android:id="@+id/spinPayin"
@@ -282,14 +280,8 @@
                     android:scrollbars="none"
                     android:singleLine="true"
                     android:spinnerMode="dropdown" />
-
             </LinearLayout>
-
-
-
-
         </LinearLayout>
-
 
         <Button
             android:id="@+id/btnSearchFlights"
@@ -301,7 +293,5 @@
             android:background="@drawable/button_rounded"
             android:text="Search Flights"
             android:textColor="#fff" />
-
-
     </LinearLayout>
 </ScrollView>

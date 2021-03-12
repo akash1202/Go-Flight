@@ -20,7 +20,7 @@
             android:fontFamily="@font/graphiksemibold"
             android:gravity="center"
             android:text="Route Information"
-            android:textColor="#631636"
+            android:textColor="@color/colorPrimary"
             android:textSize="22dp" />
 
         <Button
@@ -31,13 +31,10 @@
             android:layout_margin="15dp"
             android:layout_weight=".5"
             android:textColor="#fff"
-            android:background="#631636"
+            android:background="@color/colorPrimary"
             android:text="+ Add Route"
             android:textAllCaps="false" />
-
-
     </LinearLayout>
-
 
     <ListView
         android:id="@+id/list_view"

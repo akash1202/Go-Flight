@@ -2,10 +2,8 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:color="@color/colorPrimaryDark"
         android:state_pressed="true"/>
-
-    <item android:color="@color/white"
+    <item android:color="@color/colorPrimaryWhite"
         android:state_checked="true"/>
-
     <item android:color="@color/white_trans"
         android:state_checked="false"/>
     <item android:color="@color/white_trans"/>

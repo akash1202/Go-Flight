@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="@color/colorPrimaryWhite"
     android:layout_height="match_parent">
-
-
     <LinearLayout
         android:id="@+id/ll"
         android:layout_width="match_parent"
@@ -21,7 +20,7 @@
             android:layout_weight="1"
             android:textStyle="bold"
             android:fontFamily="@font/poppinsmedium"
-            android:background="#631636"
+            android:background="@color/colorPrimaryLight"
             android:text="one Way"
             android:textColor="#fff" />
 
@@ -32,11 +31,11 @@
             android:layout_height="44dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:textStyle="bold"
+            android:background="@color/colorPrimaryDark"
             android:fontFamily="@font/poppinsmedium"
-            android:background="#9099a2"
             android:text="Two Way"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
@@ -46,6 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/ll"
+        android:layout_marginTop="4dp"
         android:orientation="vertical">
 
 
@@ -65,9 +65,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="14dp"
-                    android:text="From"
                     android:fontFamily="@font/poppinsmedium"
-                    android:textColor="#A76464" />
+                    android:text="From"
+                    android:textColor="@color/colorPrimary" />
 
 
                 <Spinner
@@ -78,16 +78,15 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginRight="13dp"
                     android:layout_weight="1"
-                    android:fontFamily="@font/poppinsmedium"
                     android:background="@drawable/edittext_rounded"
                     android:entries="@array/source"
+                    android:fontFamily="@font/poppinsmedium"
                     android:padding="@dimen/_8ssp"
                     android:scrollbars="none"
                     android:singleLine="true"
                     android:spinnerMode="dropdown" />
 
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -100,9 +99,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="14dp"
-                    android:text="To"
                     android:fontFamily="@font/poppinsmedium"
-                    android:textColor="#A76464" />
+                    android:text="To"
+                    android:textColor="@color/colorPrimary" />
 
 
                 <Spinner
@@ -115,12 +114,11 @@
                     android:layout_weight="1"
                     android:background="@drawable/edittext_rounded"
                     android:entries="@array/destination"
+                    android:fontFamily="@font/poppinsmedium"
                     android:padding="@dimen/_8ssp"
                     android:scrollbars="none"
-                    android:fontFamily="@font/poppinsmedium"
                     android:singleLine="true"
                     android:spinnerMode="dropdown" />
-
             </LinearLayout>
 
 
@@ -132,23 +130,24 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="14dp"
-            android:text="Departure"
             android:fontFamily="@font/poppinsmedium"
-            android:textColor="#A76464" />
+            android:text="Departure"
+            android:textColor="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/etDeparture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="13dp"
-            android:fontFamily="@font/poppinsmedium"
             android:layout_marginTop="4dp"
             android:layout_marginRight="13dp"
             android:background="@drawable/edittext_rounded"
-            android:hint="Departure"
-            android:paddingLeft="@dimen/_40sdp"
+            android:fontFamily="@font/poppinsmedium"
+            android:hint="Departure Date"
+            android:gravity="start"
+            android:paddingLeft="@dimen/_20sdp"
             android:paddingTop="@dimen/_6ssp"
-            android:paddingRight="@dimen/_40sdp"
+            android:paddingRight="@dimen/_20sdp"
             android:paddingBottom="@dimen/_6ssp"
             android:textColorHint="#C5BFC2" />
 
@@ -160,7 +159,33 @@
             android:layout_marginTop="14dp"
             android:fontFamily="@font/poppinsmedium"
             android:text="Passengers"
-            android:textColor="#A76464" />
+            android:textColor="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="14dp"
+                android:layout_weight="1"
+                android:text="Adults"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="14dp"
+                android:layout_weight="1"
+                android:text="Children"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -178,10 +203,10 @@
                 android:layout_weight="1"
                 android:background="@drawable/edittext_rounded"
                 android:entries="@array/adults"
+                android:fontFamily="@font/poppinsmedium"
                 android:padding="@dimen/_8ssp"
                 android:scrollbars="none"
                 android:singleLine="true"
-                android:fontFamily="@font/poppinsmedium"
                 android:spinnerMode="dropdown" />
 
             <Spinner
@@ -222,7 +247,7 @@
                     android:layout_marginTop="14dp"
                     android:fontFamily="@font/poppinsmedium"
                     android:text="Class Type"
-                    android:textColor="#A76464" />
+                    android:textColor="@color/colorPrimary" />
 
 
                 <Spinner
@@ -235,12 +260,11 @@
                     android:layout_weight="1"
                     android:background="@drawable/edittext_rounded"
                     android:entries="@array/classtype"
+                    android:fontFamily="@font/poppinsmedium"
                     android:padding="@dimen/_8ssp"
                     android:scrollbars="none"
-                    android:fontFamily="@font/poppinsmedium"
                     android:singleLine="true"
                     android:spinnerMode="dropdown" />
-
             </LinearLayout>
 
 
@@ -249,17 +273,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="14dp"
-                    android:text="Pay In"
                     android:fontFamily="@font/poppinsmedium"
-                    android:textColor="#A76464" />
-
-
+                    android:text="Pay In"
+                    android:textColor="@color/colorPrimary" />
                 <Spinner
                     android:id="@+id/spinPayin"
                     android:layout_width="match_parent"
@@ -270,15 +291,12 @@
                     android:layout_weight="1"
                     android:background="@drawable/edittext_rounded"
                     android:entries="@array/currency"
+                    android:fontFamily="@font/poppinsmedium"
                     android:padding="@dimen/_8ssp"
                     android:scrollbars="none"
-                    android:fontFamily="@font/poppinsmedium"
                     android:singleLine="true"
                     android:spinnerMode="dropdown" />
-
             </LinearLayout>
-
-
         </LinearLayout>
 
 
@@ -286,14 +304,15 @@
             android:id="@+id/btnSearchFlights"
             android:layout_width="140dp"
             android:layout_height="44dp"
+            android:layout_marginLeft="15dp"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:fontFamily="@font/poppinsmedium"
             android:layout_marginRight="20dp"
-            android:background="#631636"
-            android:textStyle="bold"
+            android:background="@color/colorPrimaryDark"
+            android:fontFamily="@font/poppinsmedium"
             android:text="Search Flights"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textStyle="bold" />
 
 
     </LinearLayout>

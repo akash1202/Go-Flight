@@ -9,9 +9,10 @@
 
     <string-array name="airways">
         <item>Select Airways</item>
-        <item>Indian Airways</item>
+        <item>Air India</item>
+        <item>Air Canada</item>
         <item>British Airways</item>
-        <item>Arab Airways</item>
+        <item>Qatar Airways</item>
     </string-array>
 
 
@@ -30,30 +31,50 @@
         <item>PM</item>
     </string-array>
 
+    <string-array name="totalhours">
+        <item>Choose Total Hours</item>
+        <item>5 Hours</item>
+        <item>10 Hours</item>
+        <item>15 Hours</item>
+        <item>20 Hours</item>
+        <item>25 Hours</item>
+        <item>30 Hours</item>
+        <item>35 Hours</item>
+        <item>40 Hours</item>
+        <item>45 Hours</item>
+        <item>50 Hours</item>
+    </string-array>
+
+    <string-array name="stops">
+        <item>Please Choose no of Stops</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
     <string-array name="source">
-        <item>Toronto</item>
-        <item>Vancouver</item>
-        <item>Saskatoon</item>
-        <item>SK</item>
-        <item>Canada</item>
-        <item>Charlottetown</item>
-        <item>Halifax</item>
-        <item>Quebec</item>
+        <item>Montreal-YUL</item>
+        <item>Toronto-YUZ</item>
+        <item>Bombay-CSIA</item>
+        <item>Ahmedabad-SVIA</item>
     </string-array>
 
     <string-array name="destination">
-        <item>Calgary</item>
-        <item>British Columbia</item>
-        <item>Vancouver</item>
-        <item>BC</item>
-        <item>Canada YVR</item>
-        <item>Winnipeg</item>
-        <item>Montreal</item>
-        <item>India</item>
+        <item>Montreal-YUL</item>
+        <item>Toronto-YUZ</item>
+        <item>Bombay-CSIA</item>
+        <item>Ahmedabad-SVIA</item>
+    </string-array>
+
+    <string-array name="passCountry">
+        <item>INDIA</item>
+        <item>CANADA</item>
     </string-array>
 
     <string-array name="adults">
-        <item>Adults</item>
+        <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -64,7 +85,7 @@
 
 
     <string-array name="childrens">
-        <item>Childrens</item>
+        <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -74,17 +95,23 @@
     </string-array>
 
     <string-array name="classtype">
+        <item>Business</item>
+        <item>Premium</item>
         <item>Economy</item>
-        <item>Business class</item>
-        <item>Premium class</item>
-        <item>Economy class</item>
     </string-array>
 
 
     <string-array name="currency">
         <item>CAD</item>
-        <item>RUPEE</item>
-        <item>DOLLER</item>
+        <item>INR</item>
+        <item>EUR</item>
+        <item>USD</item>
+    </string-array>
+
+
+    <string-array name="spinLugguage">
+        <item>No</item>
+        <item>Yes</item>
     </string-array>
 
     <string-array name="route">
@@ -94,5 +121,6 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hotel_url_default"><b>https://mercure.accor.com/gb/canada/index.shtml</b></string>
 
 </resources>
