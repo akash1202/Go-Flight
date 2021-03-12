@@ -8,12 +8,13 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:background="@drawable/bgg"
+        android:backgroundTint="@color/colorPrimary"
         android:layout_height="match_parent">
         <TextView
             android:id="@+id/tv1"
-            android:text="Hotel Name"
+            android:text="Hotel"
             android:layout_marginTop="14dp"
-            android:textColor="#A76464"
+            android:textColor="@color/colorPrimary"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -33,7 +34,7 @@
         <TextView
             android:text="Country"
             android:layout_marginTop="14dp"
-            android:textColor="#A76464"
+            android:textColor="@color/colorPrimary"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -41,7 +42,7 @@
         <EditText
             android:id="@+id/etCountry"
             android:background="@drawable/edittext_rounded"
-            android:hint="Country"
+            android:hint="Country Name"
             android:padding="8dp"
             android:layout_marginTop="4dp"
             android:layout_marginLeft="13dp"
@@ -50,11 +51,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-
-
         <TextView
             android:text="Province"
-            android:textColor="#A76464"
+            android:textColor="@color/colorPrimary"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -62,7 +61,7 @@
         <EditText
             android:id="@+id/etProvince"
             android:background="@drawable/edittext_rounded"
-            android:hint="Province"
+            android:hint="Province Name"
             android:padding="8dp"
             android:layout_marginTop="4dp"
             android:layout_marginLeft="13dp"
@@ -75,7 +74,7 @@
 
         <TextView
             android:text="City"
-            android:textColor="#A76464"
+            android:textColor="@color/colorPrimary"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -83,7 +82,7 @@
         <EditText
             android:id="@+id/etCity"
             android:background="@drawable/edittext_rounded"
-            android:hint="City"
+            android:hint="City Name"
             android:padding="8dp"
             android:layout_marginTop="4dp"
             android:layout_marginLeft="13dp"
@@ -94,8 +93,8 @@
 
 
         <TextView
-            android:text="Postal Code"
-            android:textColor="#A76464"
+            android:text="Code"
+            android:textColor="@color/colorPrimary"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -115,7 +114,7 @@
 
         <TextView
             android:text="Price"
-            android:textColor="#A76464"
+            android:textColor="@color/colorPrimary"
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -123,7 +122,7 @@
         <EditText
             android:id="@+id/etPrice"
             android:background="@drawable/edittext_rounded"
-            android:hint="Price"
+            android:hint="Price (CAD)"
             android:inputType="number"
             android:padding="8dp"
             android:layout_marginTop="4dp"
@@ -133,31 +132,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <Button
+        <ImageView
+            android:id="@+id/hotelImageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo"
+            android:alpha="0.8"
+            android:visibility="visible" />
+
+        <!--<Button
             android:id="@+id/btn_upload"
-            android:layout_width="@dimen/_200sdp"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginRight="70dp"
             android:background="#631636"
-            android:text="Upload Hotel Image"
-            android:textColor="#fff"
-            android:textAllCaps="false" />
-
-
+            android:text="Upload"
+            android:textAllCaps="false"
+            android:textColor="#fff" />-->
 
         <Button
             android:id="@+id/btnAddHotel"
             android:layout_width="150dp"
             android:layout_height="40dp"
-            android:layout_gravity="right"
+            android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:layout_marginRight="20dp"
-            android:background="#631636"
+            android:background="@color/colorPrimary"
             android:text="Add Hotel"
+            android:gravity="center"
             android:textColor="#fff" />
-
-
     </LinearLayout>
 </ScrollView>
