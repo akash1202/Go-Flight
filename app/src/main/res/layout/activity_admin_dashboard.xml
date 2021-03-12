@@ -11,8 +11,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -22,8 +20,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_margin="5dp"
-        android:background="@color/lightgray" />
+        android:layout_margin="5dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,7 +47,6 @@
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-
                     android:padding="10dp"
                     android:src="@mipmap/ic_person" />
 
@@ -65,7 +61,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_margin="5dp"
-                    android:background="@color/lightgray" />
+                    android:background="@color/colorPrimaryLight" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -102,7 +98,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_margin="5dp"
-                    android:background="@color/lightgray" />
+                    android:background="@color/colorPrimaryLight" />
                 <!--      <TextView
                           android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
@@ -155,7 +151,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_margin="5dp"
-                    android:background="@color/lightgray" />
+                    android:background="@color/colorPrimaryLight" />
                 <!--     <TextView
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
@@ -199,7 +195,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_margin="5dp"
-                    android:background="@color/lightgray" />
+                    android:background="@color/colorPrimaryLight" />
 
 
             </LinearLayout>
@@ -215,7 +211,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
-        android:background="#631636"
+        android:background="@color/colorPrimary"
         android:paddingRight="5dp"
         android:text="Logout"
         android:textStyle="bold"
