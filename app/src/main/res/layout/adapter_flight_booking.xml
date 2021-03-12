@@ -14,8 +14,6 @@
         app:cardElevation="10dp"
         app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="true">
-
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -81,8 +79,7 @@
                 android:fontFamily="@font/poppinsmedium"
                 android:textSize="@dimen/_13ssp"
                 android:text="Montreal - Delhi"
-                android:textColor="#F6CD50" />
-
+                android:textColor="@color/colorPrimary" />
 
             <TextView
                 android:id="@+id/tvoneway"
@@ -96,8 +93,7 @@
                 android:fontFamily="@font/poppinsmedium"
                 android:textSize="@dimen/_13ssp"
                 android:text="One way"
-                android:textColor="#F6CD50" />
-
+                android:textColor="@color/colorPrimary" />
 
             <TextView
                 android:id="@+id/tvAirways"
@@ -110,10 +106,7 @@
                 android:fontFamily="@font/poppinsmedium"
                 android:textSize="@dimen/_13ssp"
                 android:text="Eithad Airways"
-                android:textColor="#F6CD50" />
-
-
-
+                android:textColor="@color/colorPrimary" />
 
             <Button
                 android:id="@+id/btnBook"
@@ -134,10 +127,6 @@
                 android:text="Book"
                 android:textAllCaps="false" />
 
-
         </RelativeLayout>
-
-
     </androidx.cardview.widget.CardView>
-
 </RelativeLayout>

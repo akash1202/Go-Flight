@@ -5,20 +5,20 @@
 
     <TableLayout
         android:id="@+id/tablelayout"
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_margin="10dp"
         android:layout_height="wrap_content">
         <TableRow
-            android:background="#43758C"
+            android:background="@color/colorPrimary"
             android:padding="10dp">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="Name"
                 android:textColor="#fff"
-                android:textStyle="bold"
-                android:text="Name" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
