@@ -6,7 +6,12 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -15,8 +20,7 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activies.EditRouteActivity"></activity>
-        <activity android:name=".activies.PaymentDetailsActivity" />
+        <activity android:name=".activies.PaymentDetailsActivity"/>
         <activity android:name=".activies.GuestAvailableflightsActivity" />
         <activity android:name=".activies.GuestDashboardActivity" />
         <activity android:name=".activies.MyTicketDetailsActivity" />
@@ -34,13 +38,18 @@
         <activity android:name=".activies.GetCustomerProfileActivity" />
         <activity android:name=".activies.GuestActivity" />
         <activity android:name=".activies.ViewCustomersActivity" />
+        <activity android:name=".activies.AddHotelActivity" />
         <activity android:name=".activies.CustomerDasboardActivity" />
         <activity android:name=".activies.AdminDashboardActivity" />
         <activity android:name=".activies.RegistrationActivity" />
         <activity android:name=".activies.CustomerLoginActivity" />
         <activity android:name=".activies.AdminLoginActivity" />
-        <activity android:name=".activies.MainActivity" />
-        <activity android:name=".activies.SplashActivity">
+        <activity android:name=".activies.MainActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name=".activies.EditRouteActivity" />
+        <activity android:name= ".activies.EditHotelActivity" />
+        <activity android:name=".activies.SplashActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
