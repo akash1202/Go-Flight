@@ -103,7 +103,7 @@
                 android:fontFamily="@font/poppinsmedium"
                 android:textSize="@dimen/_13ssp"
                 android:text="Montreal - Delhi"
-                android:textColor="#F6CD50" />
+                android:textColor="@color/colorPrimaryLight" />
 
 
             <TextView
@@ -118,7 +118,7 @@
                 android:fontFamily="@font/poppinsmedium"
                 android:textSize="@dimen/_13ssp"
                 android:text="One way"
-                android:textColor="#F6CD50" />
+                android:textColor="@color/colorPrimaryLight" />
 
 
             <TextView
@@ -132,7 +132,7 @@
                 android:fontFamily="@font/poppinsmedium"
                 android:textSize="@dimen/_13ssp"
                 android:text="Eithad Airways"
-                android:textColor="#F6CD50" />
+                android:textColor="@color/colorPrimaryLight" />
 
 
 

@@ -27,7 +27,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="14dp"
                     android:text="From"
-                    android:textColor="#A76464" />
+                    android:textColor="@color/colorPrimary" />
 
 
                 <Spinner
@@ -62,7 +62,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="14dp"
                     android:text="To"
-                    android:textColor="#A76464" />
+                    android:textColor="@color/colorPrimary" />
 
 
                 <Spinner
@@ -95,7 +95,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="14dp"
             android:text="Departure"
-            android:textColor="#A76464" />
+            android:textColor="@color/colorPrimary" />
 
         <EditText
             android:id="@+id/etDeparture"
@@ -119,8 +119,30 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="14dp"
             android:text="Passengers"
-            android:textColor="#A76464" />
-
+            android:textColor="@color/colorPrimary" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="14dp"
+        android:text="Adults"
+        android:layout_gravity="top"
+        android:textColor="@color/colorPrimary" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="14dp"
+        android:text="Children"
+        android:textColor="@color/colorPrimary" />
+</LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -180,7 +202,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="14dp"
                     android:text="Class Type"
-                    android:textColor="#A76464" />
+                    android:textColor="@color/colorPrimary" />
 
 
                 <Spinner
@@ -215,7 +237,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="14dp"
                     android:text="Pay In"
-                    android:textColor="#A76464" />
+                    android:textColor="@color/colorPrimary" />
 
 
                 <Spinner

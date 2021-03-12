@@ -81,7 +81,7 @@
                 android:fontFamily="@font/poppinsmedium"
                 android:textSize="@dimen/_13ssp"
                 android:text="Montreal - Delhi"
-                android:textColor="#F6CD50" />
+                android:textColor="@color/colorPrimary" />
 
 
             <TextView
@@ -96,7 +96,7 @@
                 android:fontFamily="@font/poppinsmedium"
                 android:textSize="@dimen/_13ssp"
                 android:text="One way"
-                android:textColor="#F6CD50" />
+                android:textColor="@color/colorPrimary" />
 
 
             <TextView
@@ -110,7 +110,7 @@
                 android:fontFamily="@font/poppinsmedium"
                 android:textSize="@dimen/_13ssp"
                 android:text="Eithad Airways"
-                android:textColor="#F6CD50" />
+                android:textColor="@color/colorPrimary" />
 
 
               <Button
@@ -125,7 +125,7 @@
                   android:textColor="#fff"
                   android:textStyle="bold"
                   android:textSize="13dp"
-                  android:background="#631636"
+                  android:background="@color/colorPrimaryDark"
                   android:fontFamily="@font/poppinsmedium"
                   android:text="Edit"
                   android:textAllCaps="false" />
@@ -135,19 +135,19 @@
                 android:id="@+id/btnDelete"
                 android:layout_width="@dimen/_90sdp"
                 android:layout_height="30dp"
-                android:layout_alignParentRight="true"
                 android:layout_below="@+id/tvAirways"
+                android:layout_alignParentRight="true"
                 android:layout_marginLeft="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_15sdp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="@dimen/_15sdp"
-                android:background="#9099a2"
-                android:textSize="13dp"
-                android:textColor="#fff"
-                android:textStyle="bold"
+                android:background="@color/colorPrimaryWhite"
                 android:fontFamily="@font/poppinsmedium"
                 android:text="Delete"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="13dp"
+                android:textStyle="bold" />
 
 
         </RelativeLayout>
