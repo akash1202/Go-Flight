@@ -168,7 +168,7 @@ public class EditHotelActivity extends AppCompatActivity implements EasyPermissi
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                 pd.dismiss();
                 Toast.makeText(EditHotelActivity.this, "Hotel Updated successfully. ", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(EditHotelActivity.this,HotelInfoActivity.class));
+                startActivity(new Intent(EditHotelActivity.this, HotelInfoActivity.class));
                 finish();
             }
 

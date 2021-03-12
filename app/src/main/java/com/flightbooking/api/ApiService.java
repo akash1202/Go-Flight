@@ -3,6 +3,9 @@ package com.flightbooking.api;
 
 import com.flightbooking.model.AvailableFlightsPojo;
 import com.flightbooking.model.BookingsPojo;
+import com.flightbooking.model.HotelInfoPojo;
+import com.flightbooking.model.MyProfilePojo;
+import com.flightbooking.model.ResponseData;
 import com.flightbooking.model.RouteInfoPojo;
 
 import java.util.List;
@@ -20,7 +23,7 @@ import retrofit2.http.Query;
 
 public interface ApiService {
 
-    @GET("/flight/customer_registration.php?")
+    @GET("/flight/customer_register.php?")
     Call<ResponseData> customer_registration(
             @Query("fname") String fname,
             @Query("lname") String lname,
@@ -136,11 +139,12 @@ public interface ApiService {
             @Query("jdate") String jdate,
             @Query("amount") String amount,
             @Query("uname") String uname
-
     );
 
     @GET("/flight/deleteroute.php")
     Call<ResponseData> deleteroute(@Query("rid") String rid);
+    @GET("/flight/deletehotel.php")
+    Call<ResponseData> deletehotel(@Query("hid") String rid);
 
     @GET("/flight/editroute.php?")
     Call<ResponseData> editroute(
@@ -156,5 +160,6 @@ public interface ApiService {
             @Query("layour") String layour,
             @Query("rid") String rid,
             @Query("price") String price);
+
 
 }
