@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -88,6 +89,16 @@ public class EditRouteActivity extends AppCompatActivity {
 
         tvFromTime.setText(getIntent().getStringExtra("frmtim"));
         tvToTime.setText(getIntent().getStringExtra("totim"));
+        if(tvFromTime.getText().toString().contains("P") ||tvFromTime.getText().toString().contains("p")){
+            spinFromAmpm.setSelection(1);
+        }else if(tvFromTime.getText().toString().contains("A")|| tvFromTime.getText().toString().contains("a")){
+            spinFromAmpm.setSelection(0);
+        }
+        if(tvToTime.getText().toString().contains("P") ||tvToTime.getText().toString().contains("p")){
+            spinToAmpm.setSelection(1);
+        }else if(tvToTime.getText().toString().contains("A")|| tvToTime.getText().toString().contains("a")){
+            spinToAmpm.setSelection(0);
+        }
         etAirport.setText(getIntent().getStringExtra("airport"));
         etPrice.setText(getIntent().getStringExtra("price"));
 
@@ -95,7 +106,6 @@ public class EditRouteActivity extends AppCompatActivity {
         btnEditRoute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 editRoute();
             }
         });
@@ -103,11 +113,10 @@ public class EditRouteActivity extends AppCompatActivity {
 
     public  void editRoute() {
 
-        String fromtime=tvFromTime.getText().toString()+spinFromAmpm.getSelectedItem().toString();
-        String totime=tvToTime.getText().toString()+spinToAmpm.getSelectedItem().toString();
+        String fromtime=tvFromTime.getText().toString().trim().length() > 4 ? tvFromTime.getText().toString().trim()+spinFromAmpm.getSelectedItem().toString(): tvFromTime.getText().toString().trim();
+        String totime=tvToTime.getText().toString().trim().length() > 4 ? tvToTime.getText().toString().trim()+spinToAmpm.getSelectedItem().toString(): tvToTime.getText().toString().trim();
 
         String rid=getIntent().getStringExtra("rid");
-
         pd= new ProgressDialog(EditRouteActivity.this);
         pd.setTitle("Please wait,Data is being submit...");
         pd.show();
@@ -194,5 +203,15 @@ public class EditRouteActivity extends AppCompatActivity {
         mTimePicker.setTitle("Select Time");
         mTimePicker.show();
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
