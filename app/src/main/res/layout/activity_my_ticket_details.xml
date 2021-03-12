@@ -17,20 +17,20 @@
         android:layout_margin="20dp"
         android:textStyle="bold"
         android:textColor="#000"/>
+
+
     <TextView
         android:id="@+id/tvbid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Booking ID : "
-        android:textSize="18dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="0dp"
-        android:textStyle="bold"
-        android:textColor="#000"/>
+        android:text="Booking ID : "
+        android:textColor="#000"
+        android:textSize="18dp"
+        android:textStyle="bold" />
 
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -165,7 +165,7 @@
                     android:fontFamily="@font/poppinsmedium"
                     android:textSize="@dimen/_13ssp"
                     android:text="Montreal - Delhi"
-                    android:textColor="#F6CD50" />
+                    android:textColor="@color/colorPrimary" />
 
 
                 <TextView
@@ -180,7 +180,7 @@
                     android:fontFamily="@font/poppinsmedium"
                     android:textSize="@dimen/_13ssp"
                     android:text="One way"
-                    android:textColor="#F6CD50" />
+                    android:textColor="@color/colorPrimary" />
 
 
                 <TextView
@@ -194,7 +194,7 @@
                     android:fontFamily="@font/poppinsmedium"
                     android:textSize="@dimen/_13ssp"
                     android:text="Eithad Airways"
-                    android:textColor="#F6CD50" />
+                    android:textColor="@color/colorPrimary" />
 
                 <TextView
                     android:id="@+id/tvstops"
@@ -215,13 +215,12 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvstops"
                     android:layout_marginLeft="@dimen/_13sdp"
-                    android:layout_marginTop="@dimen/_4ssp"
+                    android:layout_marginTop="9dp"
                     android:layout_marginBottom="@dimen/_3ssp"
                     android:fontFamily="@font/poppinsmedium"
-                    android:textSize="@dimen/_13ssp"
                     android:text="Layour Time : "
-                    android:textColor="#000" />
-
+                    android:textColor="#000"
+                    android:textSize="@dimen/_13ssp" />
 
 
             </RelativeLayout>
@@ -270,7 +269,7 @@
                     android:textSize="@dimen/_13ssp"
                     android:text="Check-In"
                     android:textStyle="bold"
-                    android:textColor="#F6CD50" />
+                    android:textColor="@color/colorPrimary" />
 
 
                 <TextView
@@ -284,7 +283,7 @@
                     android:layout_marginTop="@dimen/_4ssp"
                     android:fontFamily="@font/poppinsmedium"
                     android:textSize="@dimen/_13ssp"
-                    android:text="15 KG / Person"
+                    android:text="23 KG / Person"
                     android:textColor="#000" />
 
 
@@ -300,7 +299,7 @@
                     android:textSize="@dimen/_13ssp"
                     android:text="Cabin"
                     android:textStyle="bold"
-                    android:textColor="#F6CD50" />
+                    android:textColor="@color/colorPrimary" />
 
 
                 <TextView
@@ -314,7 +313,7 @@
                     android:layout_marginTop="@dimen/_4ssp"
                     android:fontFamily="@font/poppinsmedium"
                     android:textSize="@dimen/_13ssp"
-                    android:text="23 KG / Person"
+                    android:text="7 KG / Person"
                     android:textColor="#000" />
 
                 <TextView
@@ -329,7 +328,7 @@
                     android:textSize="@dimen/_13ssp"
                     android:text="Extra Weight"
                     android:textStyle="bold"
-                    android:textColor="#F6CD50" />
+                    android:textColor="@color/colorPrimary" />
 
 
                 <TextView
@@ -384,7 +383,7 @@
                     android:text="Total Fare : "
                     android:textStyle="bold"
                     android:textSize="@dimen/_15ssp"
-                    android:textColor="#FFC107" />
+                    android:textColor="@color/colorPrimary" />
 
 
                 <TextView

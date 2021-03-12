@@ -58,7 +58,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     return;
                 }
 
-                if(et_phno.getText().toString().length() > 9){
+                if(et_phno.getText().toString().length() < 9){
                     Toast.makeText(RegistrationActivity.this, "Phone no Should be 10 digits.", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -91,8 +91,8 @@ public class RegistrationActivity extends AppCompatActivity {
         return android.util.Patterns.PHONE.matcher(number).matches();
     }
     private void customerRegistration() {
-        String firstname = et_fname.getText().toString();
-        String lastname = et_lname.getText().toString();
+        String fname = et_fname.getText().toString();
+        String lname = et_lname.getText().toString();
         String phone = et_phno.getText().toString();
         String email = et_EmailID.getText().toString();
         String pass = et_password.getText().toString();
@@ -102,17 +102,17 @@ public class RegistrationActivity extends AppCompatActivity {
         progressDialog.show();
 
         ApiService service = RetroClient.getRetrofitInstance().create(ApiService.class);
-        Call<ResponseData> call = service.customer_registration(firstname,lastname,email,pass,phone);
+        Call<ResponseData> call = service.customer_registration(fname,lname,email,pass,phone);
         call.enqueue(new Callback<ResponseData>() {
             @Override
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                 progressDialog.dismiss();
+               // Log.d(response.body()+"")
                 if (response.body().status.equals("true")) {
                     Toast.makeText(RegistrationActivity.this, response.body().message, Toast.LENGTH_LONG).show();
                     Intent intent=new Intent(RegistrationActivity.this, CustomerLoginActivity.class);
                     startActivity(intent);
                     finish();
-
                 } else {
                     Toast.makeText(RegistrationActivity.this, response.body().message, Toast.LENGTH_LONG).show();
                 }

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cdDetails"
@@ -30,13 +28,13 @@
                     android:id="@+id/pp"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:src="@drawable/pp"/>
+                    android:src="@drawable/pp" />
 
                 <TextView
-                    android:layout_below="@+id/pp"
                     android:id="@+id/tvRid"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/pp"
                     android:layout_marginLeft="@dimen/_13sdp"
                     android:layout_marginTop="@dimen/_8ssp"
                     android:layout_marginRight="@dimen/_25sdp"
@@ -47,12 +45,12 @@
                     android:textSize="@dimen/_13ssp" />
 
                 <TextView
-                    android:layout_below="@+id/tvRid"
                     android:id="@+id/tvName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvRid"
                     android:layout_marginLeft="@dimen/_13sdp"
-                    android:layout_marginTop="@dimen/_8ssp"
+                    android:layout_marginTop="2dp"
                     android:layout_marginRight="@dimen/_25sdp"
                     android:fontFamily="@font/poppinsmedium"
                     android:labelFor="@+id/tvPrice"
@@ -75,7 +73,6 @@
                     android:textSize="@dimen/_13ssp" />
 
 
-
                 <TextView
                     android:id="@+id/tvTotalFair"
                     android:layout_width="wrap_content"
@@ -88,33 +85,82 @@
                     android:text="Total Fair"
                     android:textColor="#F10A0A"
                     android:textSize="@dimen/_13ssp" />
-
-
             </RelativeLayout>
-
-
         </androidx.cardview.widget.CardView>
 
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cdtripreview"
-            android:layout_below="@+id/cdDetails"
+        <LinearLayout
+            android:id="@+id/payOptionsLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/cdDetails"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pay Using" />
+
+            <RadioGroup
+                android:id="@+id/payOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/payOptionDebit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Debit" />
+
+                <RadioButton
+                    android:id="@+id/payOPtionPaypal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Credit / Paypal" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/debitCardLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/payOptionsLayout"
             android:layout_margin="@dimen/_10ssp"
+            android:visibility="visible"
             app:cardBackgroundColor="#fff"
             app:cardCornerRadius="2dp"
             app:cardElevation="10dp"
             app:cardMaxElevation="12dp"
             app:cardPreventCornerOverlap="true">
 
+            <com.vinaygaba.creditcardview.CreditCardView
+                android:id="@+id/debitCardView"
+                android:layout_width="match_parent"
+                android:layout_height="225dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/cardbackground_world"
+                android:visibility="visible"
+                app:brandLogo="@drawable/rbclogo"
+                app:cardName="Narendra Modi"
+                app:cardNameTextColor="#cccccc"
+                app:cardNumber="5500005555555559"
+                app:cardNumberFormat="masked_all_but_last_four"
+                app:cardNumberTextColor="#cccccc"
+                app:expiryDate="02/23"
+                app:expiryDateTextColor="#cccccc"
+                app:hintTextColor="#cccccc"
+                app:isEditable="true"
+                app:putChip="true"
+                app:type="auto"
+                app:validTillTextColor="#cccccc" />
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5ssp">
-
+                android:layout_marginTop="@dimen/_5ssp"
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/tvSecureCheckout"
@@ -124,57 +170,49 @@
                     android:layout_marginTop="@dimen/_10sdp"
                     android:fontFamily="@font/poppinsmedium"
                     android:text="Secure Checkout"
-                    android:textSize="@dimen/_14ssp"
-                    android:textColor="#F6CD50" />
-
-
+                    android:textColor="#F6CD50"
+                    android:textSize="@dimen/_14ssp" />
                 <TextView
-                    android:layout_below="@+id/tvSecureCheckout"
-                    android:text="Name On Card"
-                    android:textColor="#A76464"
-                    android:layout_marginTop="@dimen/_5ssp"
-                    android:layout_marginLeft="15dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvSecureCheckout"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:text="Name On Card"
+                    android:textColor="#A76464" />
 
                 <EditText
                     android:id="@+id/etNameonCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="13dp"
                     android:background="@drawable/edittext_rounded"
                     android:hint="Name On Card"
                     android:padding="8dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginRight="13dp"
-                    android:textColorHint="#C5BFC2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-
-
-
+                    android:textColorHint="#C5BFC2" />
                 <TextView
-                    android:text="Debit / Credit card number"
-                    android:textColor="#A76464"
-                    android:layout_marginTop="@dimen/_5ssp"
-                    android:layout_marginLeft="15dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:text="Debit / Credit card number"
+                    android:textColor="#A76464" />
 
                 <EditText
                     android:id="@+id/etCardNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/tvName"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="13dp"
                     android:background="@drawable/edittext_rounded"
                     android:hint="XXXX-XXXX-XXXX-XXXX"
-                    android:padding="8dp"
                     android:inputType="number"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginRight="13dp"
-                    android:textColorHint="#C5BFC2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-
+                    android:padding="8dp"
+                    android:textColorHint="#C5BFC2" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -185,7 +223,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:orientation="vertical">
-
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -194,21 +231,18 @@
                             android:fontFamily="@font/poppinsmedium"
                             android:text="Exp Date"
                             android:textColor="#A76464" />
-
-
                         <EditText
                             android:id="@+id/etExapDate"
-                            android:background="@drawable/edittext_rounded"
-                            android:hint="XXXX"
-                            android:padding="8dp"
-                            android:inputType="number"
-                            android:layout_marginTop="4dp"
-                            android:layout_marginLeft="13dp"
-                            android:layout_marginRight="13dp"
-                            android:textColorHint="#C5BFC2"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="13dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginRight="13dp"
+                            android:background="@drawable/edittext_rounded"
+                            android:hint="MMYY"
+                            android:inputType="number"
+                            android:padding="8dp"
+                            android:textColorHint="#C5BFC2" />
                     </LinearLayout>
 
 
@@ -223,24 +257,24 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="15dp"
                             android:layout_marginTop="14dp"
-                            android:text="CVV"
                             android:fontFamily="@font/poppinsmedium"
+                            android:text="CVV"
                             android:textColor="#A76464" />
 
 
                         <EditText
                             android:id="@+id/etCvvumber"
-                            android:background="@drawable/edittext_rounded"
-                            android:hint="XXXX"
-                            android:padding="8dp"
-                            android:inputType="number"
-                            android:layout_marginTop="4dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="13dp"
+                            android:layout_marginTop="4dp"
                             android:layout_marginRight="13dp"
                             android:layout_marginBottom="@dimen/_8ssp"
-                            android:textColorHint="#C5BFC2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:background="@drawable/edittext_rounded"
+                            android:hint="CVV"
+                            android:inputType="numberPassword"
+                            android:padding="8dp"
+                            android:textColorHint="#C5BFC2" />
 
                     </LinearLayout>
 
@@ -275,20 +309,20 @@
         </androidx.cardview.widget.CardView>
 
 
-
         <Button
             android:id="@+id/btnCompleteBooking"
             android:layout_width="@dimen/_120sdp"
             android:layout_height="40dp"
-            android:layout_below="@+id/cdtripreview"
+            android:layout_below="@+id/debitCardLayout"
             android:layout_alignParentRight="true"
             android:layout_marginLeft="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_20ssp"
-            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="21dp"
             android:layout_marginBottom="@dimen/_15sdp"
             android:background="@drawable/button1_rounded"
             android:fontFamily="@font/poppinsmedium"
             android:text="Complete Purchase"
+            android:textColor="@android:color/white"
             android:textAllCaps="false" />
 
 
