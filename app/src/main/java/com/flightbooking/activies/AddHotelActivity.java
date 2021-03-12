@@ -157,7 +157,7 @@ public class AddHotelActivity extends AppCompatActivity implements EasyPermissio
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                 pd.dismiss();
                 Toast.makeText(AddHotelActivity.this, "Hotel Added successfully. ", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(AddHotelActivity.this,HotelInfoActivity.class));
+                startActivity(new Intent(AddHotelActivity.this, HotelInfoActivity.class));
                 finish();
             }
 

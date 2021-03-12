@@ -2,7 +2,6 @@ package com.flightbooking.fragments;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,6 +20,8 @@ import com.flightbooking.R;
 import com.flightbooking.Utils;
 import com.flightbooking.api.ApiService;
 import com.flightbooking.api.RetroClient;
+import com.flightbooking.model.MyProfilePojo;
+import com.flightbooking.model.ResponseData;
 
 import java.util.List;
 
@@ -62,11 +63,8 @@ public class MyProfileFragment extends Fragment {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
+                updateProfile();
                 getFragmentManager().beginTransaction().detach(profileFragment()).attach(profileFragment()).commit();
-                Toast.makeText(getContext(), "Coming Soon", Toast.LENGTH_SHORT).show();
-
             }
         });
 
@@ -124,8 +122,8 @@ public class MyProfileFragment extends Fragment {
                 progressDialog.dismiss();
                 if (response.body().status.equals("true")) {
                     Toast.makeText(getContext(), response.body().message, Toast.LENGTH_LONG).show();
-                    Intent intent=new Intent(getContext(), MyProfileFragment.class);
-                    startActivity(intent);
+                    //Intent intent=new Intent(getContext(), MyProfileFragment.class);
+                    //startActivity(intent);
                     //finish();
 
                 } else {
