@@ -49,6 +49,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CustomerLoginActivity.this, RegistrationActivity.class));
+                finish();
 
             }
         });
@@ -57,7 +58,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CustomerLoginActivity.this, ForgotPasswordActivity.class));
-
+                    finish();
             }
         });
 
@@ -95,6 +96,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
                     SharedPreferences sharedPreferences = getSharedPreferences(Utils.SHREF, Context.MODE_PRIVATE);
                     SharedPreferences.Editor et=sharedPreferences.edit();
                     et.putString("user_name",et_USERNAME.getText().toString());
+                    et.putBoolean("isCustomer",Boolean.TRUE);
                     et.commit();
                     startActivity(new Intent(CustomerLoginActivity.this, CustomerDasboardActivity.class));
                     finish();
