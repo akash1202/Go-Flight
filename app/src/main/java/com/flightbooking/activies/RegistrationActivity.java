@@ -7,6 +7,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +24,7 @@ import retrofit2.Response;
 
 public class RegistrationActivity extends AppCompatActivity {
     EditText et_fname,et_lname,et_phno,et_EmailID,et_password;
+    LinearLayout layout_alreadyUser;
     Button btn_reg;
     ProgressDialog progressDialog;
 
@@ -40,8 +43,16 @@ public class RegistrationActivity extends AppCompatActivity {
         et_phno=(EditText)findViewById(R.id.et_phno);
         et_EmailID=(EditText)findViewById(R.id.et_EmailID);
         et_password=(EditText)findViewById(R.id.et_password);
+        layout_alreadyUser = (LinearLayout) findViewById(R.id.layout_alreadyUser);
 
         btn_reg=(Button)findViewById(R.id.btn_reg);
+        layout_alreadyUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RegistrationActivity.this,CustomerLoginActivity.class));
+                finish();
+            }
+        });
         btn_reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

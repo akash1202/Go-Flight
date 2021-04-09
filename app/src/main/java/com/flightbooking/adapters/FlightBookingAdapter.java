@@ -22,7 +22,6 @@ public class FlightBookingAdapter extends BaseAdapter {
 
     public FlightBookingAdapter(List<BookingsPojo> availableFlightsPojo, Context cnt) {
         this.bookingsPojos = availableFlightsPojo;
-
         this.cnt = cnt;
     }
 

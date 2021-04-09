@@ -45,6 +45,7 @@ public class RouteInfoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(RouteInfoActivity.this, AddRouteActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

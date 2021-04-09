@@ -17,7 +17,7 @@ import com.flightbooking.R;
 
 public class VacationDetailsActivity extends AppCompatActivity {
     ImageView imageView;
-    TextView tvname,tvCityName,tvPrice;
+    TextView tvname,tvCityName,tvPrice,tvWeb;
     WebView webview;
     CardView cdWebview;
 
@@ -60,9 +60,11 @@ public class VacationDetailsActivity extends AppCompatActivity {
         tvname=(TextView)findViewById(R.id.tvname);
         tvCityName=(TextView)findViewById(R.id.tvCityName);
         tvPrice=(TextView)findViewById(R.id.tvPrice);
+        tvWeb=(TextView) findViewById(R.id.hotelLink);
         tvname.setText(getIntent().getStringExtra("hotelname"));
         tvCityName.setText(getIntent().getStringExtra("city"));
         tvPrice.setText(getIntent().getStringExtra("price")+"$");
+        tvWeb.setText(getIntent().getStringExtra("web"));
 
     }
 

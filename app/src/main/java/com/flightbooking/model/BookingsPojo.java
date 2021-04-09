@@ -1,11 +1,12 @@
 package com.flightbooking.model;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.SerializedName;
 
 public class BookingsPojo {
-    @SerializedName("adult")
+    @SerializedName("adult")//
     public String adult;
-
 
     @SerializedName("airways")
     public String airways;
@@ -22,17 +23,16 @@ public class BookingsPojo {
     @SerializedName("price")
     public String price;
 
-    @SerializedName("source")
+   @SerializedName("source")
     public String source;
 
-    @SerializedName("stops")
+   @SerializedName("stops")
     public String stops;
-
 
     @SerializedName("tdays")
     public String tdays;
 
-    @SerializedName("total")
+    @SerializedName("total")//
     public String total;
 
     @SerializedName("totim")
@@ -47,31 +47,31 @@ public class BookingsPojo {
     @SerializedName("bid")
     public String bid;
 
-    @SerializedName("child")
+    @SerializedName("child")//
     public String child;
 
-    @SerializedName("clas")
+    @SerializedName("clas")//
     public String clas;
 
-    @SerializedName("dat")
+    @SerializedName("dat")//
     public String dat;
 
-    @SerializedName("extra")
+    @SerializedName("extra")//
     public String extra;
 
-    @SerializedName("name")
+    @SerializedName("name")//
     public String name;
 
-    @SerializedName("passcountry")
+    @SerializedName("passcountry")//
     public String passcountry;
 
-    @SerializedName("passno")
+    @SerializedName("passno")//
     public String passno;
 
-    @SerializedName("rid")
+    @SerializedName("rid")//
     public String rid;
 
-    @SerializedName("status")
+    @SerializedName("status")//
     public String status;
 
     public String getAdult() {

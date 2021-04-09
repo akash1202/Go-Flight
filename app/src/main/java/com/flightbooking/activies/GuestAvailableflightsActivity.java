@@ -60,7 +60,6 @@ public class GuestAvailableflightsActivity extends AppCompatActivity {
                 }
                 else if (response.body().size() == 0){
                     Toast.makeText(GuestAvailableflightsActivity.this,"No data found",Toast.LENGTH_SHORT).show();
-
                 }
                 else {
                     availableFlightsPojo= response.body();

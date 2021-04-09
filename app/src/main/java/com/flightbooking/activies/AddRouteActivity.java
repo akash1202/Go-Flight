@@ -32,6 +32,7 @@ public class AddRouteActivity extends AppCompatActivity {
     TextView tvFromTime,tvToTime;
     Button btnAddHotel;
     ProgressDialog pd;
+    String fromAmPm="",toAmPm="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,8 +94,9 @@ public class AddRouteActivity extends AppCompatActivity {
         pd.setTitle("Please wait,Data is being submit...");
         pd.show();
         ApiService apiService = RetroClient.getRetrofitInstance().create(ApiService.class);
-        Call<ResponseData> call = apiService.addroutes(etSource.getText().toString(),etDestination.getText().toString(),etAirport.getText().toString(),
-                spinAirways.getSelectedItem().toString(),fromtime,totime,spinTotalDays.getSelectedItem().toString(),spinRoute.getSelectedItem().toString(),spinStops.getSelectedItem().toString(),spinTotalHours.getSelectedItem().toString(),
+        Call<ResponseData> call = apiService.addroutes("-1",etSource.getText().toString(),etDestination.getText().toString(),etAirport.getText().toString(),
+                spinAirways.getSelectedItem().toString(),fromtime,totime,spinTotalDays.getSelectedItem().toString(),
+                spinRoute.getSelectedItem().toString(),spinStops.getSelectedItem().toString(),spinTotalHours.getSelectedItem().toString(),
                 etPrice.getText().toString());
 
         call.enqueue(new Callback<ResponseData>() {
@@ -102,6 +104,7 @@ public class AddRouteActivity extends AppCompatActivity {
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                 pd.dismiss();
                 if (response.body().status.equals("true")) {
+                    Toast.makeText(AddRouteActivity.this, response.body().message, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(AddRouteActivity.this, RouteInfoActivity.class));
                     finish();
                 } else {
@@ -138,14 +141,23 @@ public class AddRouteActivity extends AppCompatActivity {
         mTimePicker = new TimePickerDialog(AddRouteActivity.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                tvFromTime.setText(selectedHour + ":" + selectedMinute);
+               // String ampm="";
                 if(tvFromTime.getText().toString().contains("P") ||tvFromTime.getText().toString().contains("p")){
                     spinFromAmpm.setSelection(1);
                 }else if(tvFromTime.getText().toString().contains("A")|| tvFromTime.getText().toString().contains("a")){
                     spinFromAmpm.setSelection(0);
                 }
+                if(selectedHour>12){
+                    selectedHour=selectedHour-12;
+                    fromAmPm="PM";
+                    spinFromAmpm.setSelection(1);
+                }else{
+                    fromAmPm="AM";
+                    spinFromAmpm.setSelection(0);
+                }
+                tvFromTime.setText(selectedHour+ ":" + selectedMinute+"");
             }
-        }, hour, minute, true);//Yes 24 hour time
+        }, hour, minute, false);//Yes 24 hour time
         mTimePicker.setTitle("Select Time");
         mTimePicker.show();
 
@@ -161,14 +173,23 @@ public class AddRouteActivity extends AppCompatActivity {
         mTimePicker = new TimePickerDialog(AddRouteActivity.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                tvToTime.setText(selectedHour + ":" + selectedMinute);
+               // String ampm="";
                 if(tvToTime.getText().toString().contains("P") ||tvToTime.getText().toString().contains("p")){
                     spinToAmpm.setSelection(1);
                 }else if(tvToTime.getText().toString().contains("A")|| tvToTime.getText().toString().contains("a")){
                     spinToAmpm.setSelection(0);
                 }
+                if(selectedHour>12){
+                    selectedHour=selectedHour-12;
+                    toAmPm="PM";
+                    spinToAmpm.setSelection(1);
+                }else{
+                    toAmPm="AM";
+                    spinFromAmpm.setSelection(0);
+                }
+                tvToTime.setText(selectedHour+ ":" + selectedMinute+"");
             }
-        }, hour, minute, true);//Yes 24 hour time
+        }, hour, minute, false);//Yes 24 hour time
         mTimePicker.setTitle("Select Time");
         mTimePicker.show();
 

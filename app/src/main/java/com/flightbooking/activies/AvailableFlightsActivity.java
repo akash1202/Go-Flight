@@ -2,6 +2,7 @@ package com.flightbooking.activies;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -62,17 +63,16 @@ public class AvailableFlightsActivity extends AppCompatActivity {
                 }
                 else if (response.body().size() == 0){
                     Toast.makeText(AvailableFlightsActivity.this,"No data found",Toast.LENGTH_SHORT).show();
-
                 }
                 else {
                     availableFlightsPojo= response.body();
                     list_view.setAdapter(new AvailableFlightsAdapter(availableFlightsPojo,adult,children,classtype, AvailableFlightsActivity.this));
-
                 }
             }
             @Override
             public void onFailure(Call<List<AvailableFlightsPojo>> call, Throwable t) {
                 progressDialog.dismiss();
+                Log.d("Search flights(error):",t.getMessage());
                 Toast.makeText(AvailableFlightsActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
             }
         });

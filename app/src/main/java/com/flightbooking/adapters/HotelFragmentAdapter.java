@@ -22,7 +22,8 @@ import java.util.Locale;
 public class HotelFragmentAdapter extends BaseAdapter {
     List<HotelInfoPojo> hotelInfo,searchhotel;
     Context cnt;
-    String imgUrl="http://bookingflight.info/flight/";
+    //String imgUrl="http://bookingflight.info/flight/";
+    String imgUrl="https://goflightinfo.000webhostapp.com/flight/";
 
 
     public HotelFragmentAdapter(List<HotelInfoPojo> hotelInfo, Context cnt) {

@@ -106,7 +106,7 @@ public class TwoWayFlightActivity extends AppCompatActivity {
                     return;
                 }
 
-                if(spinClassType.getSelectedItem().toString().equals("Economy")){
+                if(spinClassType.getSelectedItem().toString().equals("")){
                     Toast.makeText(TwoWayFlightActivity.this, "Please choose Classtype", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -118,7 +118,7 @@ public class TwoWayFlightActivity extends AppCompatActivity {
                 Intent intent=new Intent(TwoWayFlightActivity.this, AvailableFlightsActivity.class);
                 intent.putExtra("source",spinSource.getSelectedItem().toString());
                 intent.putExtra("destination",spinDest.getSelectedItem().toString());
-                intent.putExtra("type","Two Way");
+                intent.putExtra("type",getResources().getStringArray(R.array.route)[2]+"");
                 intent.putExtra("date",etDeparture.getText().toString());
                 intent.putExtra("adult",spinAdult.getSelectedItem().toString());
                 intent.putExtra("children",spinChildern.getSelectedItem().toString());

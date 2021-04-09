@@ -57,7 +57,6 @@ public class HomeFragment extends Fragment {
         etDeparture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 departuredate();
             }
         });
@@ -124,7 +123,7 @@ public class HomeFragment extends Fragment {
                 Intent intent=new Intent(getContext(), AvailableFlightsActivity.class);
                 intent.putExtra("source",spinSource.getSelectedItem().toString());
                 intent.putExtra("destination",spinDest.getSelectedItem().toString());
-                intent.putExtra("type","One Way");
+                intent.putExtra("type",getResources().getStringArray(R.array.route)[1]+""); //"One Way"
                 intent.putExtra("date",etDeparture.getText().toString());
                 intent.putExtra("adult",spinAdult.getSelectedItem().toString());
                 intent.putExtra("children",spinChildern.getSelectedItem().toString());

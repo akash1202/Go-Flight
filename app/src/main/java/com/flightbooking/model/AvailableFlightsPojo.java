@@ -33,6 +33,28 @@ public class AvailableFlightsPojo {
     @SerializedName("type")
     public String type;
 
+    @SerializedName("layour")
+    public String layour;
+
+    @SerializedName("stops")
+    public String stops;
+
+    public String getLayour() {
+        return layour;
+    }
+
+    public void setLayour(String layour) {
+        this.layour = layour;
+    }
+
+    public String getStops() {
+        return stops;
+    }
+
+    public void setStops(String stops) {
+        this.stops = stops;
+    }
+
     public String getAirport() {
         return airport;
     }

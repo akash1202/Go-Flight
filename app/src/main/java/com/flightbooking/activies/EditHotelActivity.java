@@ -23,6 +23,8 @@ import com.bumptech.glide.Glide;
 import com.flightbooking.R;
 import com.flightbooking.api.ApiService;
 import com.flightbooking.model.ResponseData;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.File;
 import java.util.HashMap;
@@ -48,9 +50,11 @@ public class EditHotelActivity extends AppCompatActivity implements EasyPermissi
     private static final String TAG = AddHotelActivity.class.getSimpleName();
     private static final int REQUEST_GALLERY_CODE = 200;
     private static final int READ_REQUEST_CODE = 300;
-    private static final String SERVER_PATH = "http://bookingflight.info/";
-    String imgUrl="http://bookingflight.info/flight/";
-    private Uri uri;
+    //private static final String SERVER_PATH = "http://bookingflight.info/";
+    private static final String SERVER_PATH = "https://goflightinfo.000webhostapp.com/";
+    String imgUrl="https://goflightinfo.000webhostapp.com/flight";
+    private Uri uri=null;
+    String hid="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,11 +72,12 @@ public class EditHotelActivity extends AppCompatActivity implements EasyPermissi
         etPostalCode=(EditText)findViewById(R.id.etPostalCode);
         etPrice=(EditText)findViewById(R.id.etPrice);
         hotelImageView= findViewById(R.id.hotelImageView);
+        hid=getIntent().getStringExtra("hid");
         etHotelName.setText(getIntent().getStringExtra("name"));
         etCity.setText(getIntent().getStringExtra("city"));
         etProvince.setText(getIntent().getStringExtra("province"));
         etCountry.setText(getIntent().getStringExtra("country"));
-        etPostalCode.setText(getIntent().getStringExtra("postalcode"));
+        etPostalCode.setText(getIntent().getStringExtra("pcode"));
         etPrice.setText(getIntent().getStringExtra("price"));
         hotelImageView.setVisibility(View.VISIBLE);
         Glide.with(EditHotelActivity.this).load(imgUrl + getIntent().getStringExtra("photo")).into(hotelImageView);
@@ -91,7 +96,6 @@ public class EditHotelActivity extends AppCompatActivity implements EasyPermissi
             @Override
             public void onClick(View v) {
                 uploadImageToServer();
-
             }
         });
     }
@@ -114,6 +118,8 @@ public class EditHotelActivity extends AppCompatActivity implements EasyPermissi
             } else {
                 EasyPermissions.requestPermissions(this, getString(R.string.read_file), READ_REQUEST_CODE, Manifest.permission.READ_EXTERNAL_STORAGE);
             }
+        }else{
+            uri=null;
         }
     }
     private String getRealPathFromURIPath(Uri contentURI, Activity activity) {
@@ -146,6 +152,7 @@ public class EditHotelActivity extends AppCompatActivity implements EasyPermissi
         pd.setTitle("Loading");
         pd.show();
         Map<String, String> map = new HashMap<>();
+        map.put("hid",hid);
         map.put("name", etHotelName.getText().toString());
         map.put("country", etCountry.getText().toString());
         map.put("city", etCity.getText().toString());
@@ -153,32 +160,46 @@ public class EditHotelActivity extends AppCompatActivity implements EasyPermissi
         map.put("pcode", etPostalCode.getText().toString());
         map.put("price", etPrice.getText().toString());
 
-
-        RequestBody mFile = RequestBody.create(MediaType.parse("image/*"), file);
-        MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file", file.getName(), mFile);
-        RequestBody filename = RequestBody.create(MediaType.parse("text/plain"), file.getName());
+        MultipartBody.Part fileToUpload=null;
+        ApiService uploadImage=null;
+        if(file!=null) {
+            RequestBody mFile = RequestBody.create(MediaType.parse("image/*"), file);
+            fileToUpload = MultipartBody.Part.createFormData("file", file.getName(), mFile);
+            RequestBody filename = RequestBody.create(MediaType.parse("text/plain"), file.getName());
+        }
+        Gson gson=new GsonBuilder()
+                .setLenient()
+                .create();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(SERVER_PATH)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
-        ApiService uploadImage = retrofit.create(ApiService.class);
-        Call<ResponseData> fileUpload = uploadImage.addhotel(fileToUpload, map);
-        fileUpload.enqueue(new Callback<ResponseData>() {
-            @Override
-            public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
-                pd.dismiss();
-                Toast.makeText(EditHotelActivity.this, "Hotel Updated successfully. ", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(EditHotelActivity.this, HotelInfoActivity.class));
-                finish();
+            uploadImage = retrofit.create(ApiService.class);
+            Call<ResponseData> fileUpload;
+            if (fileToUpload != null) {
+               // Toast.makeText(this, ""+map.get("hid"), Toast.LENGTH_SHORT).show();
+                fileUpload = uploadImage.addhotel(fileToUpload, map);
+            } else {
+                fileUpload = uploadImage.addHotel(map.get("hid"),map.get("name"),map.get("country"),map.get("province"),map.get("city"),map.get("pcode"),map.get("price"));
             }
 
-            @Override
-            public void onFailure(Call<ResponseData> call, Throwable t) {
-                pd.dismiss();
-                Toast.makeText(EditHotelActivity.this, "Error" + t.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
+            fileUpload.enqueue(new Callback<ResponseData>() {
+                @Override
+                public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
+                    pd.dismiss();
+                    Log.e("error in upload: ", response.toString()+ response.body().message+" "+ response.body().status);
+                    Toast.makeText(EditHotelActivity.this, "Hotel Updated successfully. ", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(EditHotelActivity.this, HotelInfoActivity.class));
+                    finish();
+                }
 
+                @Override
+                public void onFailure(Call<ResponseData> call, Throwable t) {
+                    pd.dismiss();
+                    Log.e("error in upload1: ", t.getMessage()+ call.clone().toString());
+                    Toast.makeText(EditHotelActivity.this, "Error" + t.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            });
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -16,14 +16,14 @@
     </string-array>
 
 
-    <string-array name="days">
+    <string-array name="tdays">
         <item>Select Days</item>
-        <item>Mon - Tues</item>
-        <item>Tues - Wed</item>
-        <item>Wed -Thur</item>
-        <item>Thur -Fri</item>
-        <item>Fri -Sat</item>
-        <item>Sat -Sun</item>
+        <item>Mon - Tue</item>
+        <item>Tue - Wed</item>
+        <item>Wed - Thu</item>
+        <item>Thur - Fri</item>
+        <item>Fri - Sat</item>
+        <item>Sat - Sun</item>
     </string-array>
 
     <string-array name="ampm">

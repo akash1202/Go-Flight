@@ -181,12 +181,13 @@ public class PaymentDetailsActivity extends AppCompatActivity {
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                 progressDialog.dismiss();
                 if (response.body().status.equals("true")) {
-                    Toast.makeText(PaymentDetailsActivity.this, response.body().message, Toast.LENGTH_LONG).show();
+                    Log.d("response ------------>",response.body().message+"");
+                    Toast.makeText(PaymentDetailsActivity.this, response.body().message+"", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(PaymentDetailsActivity.this, CustomerDasboardActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
-                    Toast.makeText(PaymentDetailsActivity.this, response.body().message, Toast.LENGTH_LONG).show();
+                    Toast.makeText(PaymentDetailsActivity.this, response.body().message+"", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -220,12 +221,12 @@ public class PaymentDetailsActivity extends AppCompatActivity {
             if(paymentConfirmation!=null){
                 try{
                     Log.i("Paypal response",paymentConfirmation.toJSONObject().toString(4));
-
-                    Toast.makeText(this, paymentConfirmation.toJSONObject().toString(4), Toast.LENGTH_LONG).show();
+                   // Toast.makeText(this, paymentConfirmation.toJSONObject().toString(4), Toast.LENGTH_LONG).show();
                     if(isPaymentSuccess(paymentConfirmation.toJSONObject())){
+                        Toast.makeText(getApplicationContext(), "Payment Done !!!", Toast.LENGTH_LONG).show();
                         finish();
                     }
-                    //Toast.makeText(this, "Payment Done !!!", Toast.LENGTH_LONG).show();
+                    // Toast.makeText(this, "Payment Done !!!", Toast.LENGTH_LONG).show();
                     //setText(paymentConfirmation.toJSONObject().toString(4));
                     //TODO: send 'confirmation to server for verification'
                 }catch (JSONException e){

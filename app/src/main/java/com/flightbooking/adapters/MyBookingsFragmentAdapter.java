@@ -2,6 +2,7 @@ package com.flightbooking.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,6 +74,8 @@ public class MyBookingsFragmentAdapter extends BaseAdapter {
 
         TextView tvdate = (TextView) obj2.findViewById(R.id.tvdate);
         tvdate.setText(bookingsPojos.get(pos).getDat());
+
+       // Log.d("booking pojo "+pos,bookingsPojos.get(pos).getDestination());
 
         TextView tvbid = (TextView) obj2.findViewById(R.id.tvbid);
         tvbid.setText("Booking Id : #FB"+bookingsPojos.get(pos).getBid());

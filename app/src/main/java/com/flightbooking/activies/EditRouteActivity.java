@@ -33,6 +33,7 @@ public class EditRouteActivity extends AppCompatActivity {
     TextView tvFromTime,tvToTime;
     Button btnEditRoute;
     ProgressDialog pd;
+    String fromAmPm="",toAmPm="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,20 +88,52 @@ public class EditRouteActivity extends AppCompatActivity {
 //        intent.putExtra("rid",routeInfoPojo.get(pos).getRid());
 //        intent.putExtra("price",routeInfoPojo.get(pos).getPrice());
 
-        tvFromTime.setText(getIntent().getStringExtra("frmtim"));
-        tvToTime.setText(getIntent().getStringExtra("totim"));
-        if(tvFromTime.getText().toString().contains("P") ||tvFromTime.getText().toString().contains("p")){
-            spinFromAmpm.setSelection(1);
-        }else if(tvFromTime.getText().toString().contains("A")|| tvFromTime.getText().toString().contains("a")){
-            spinFromAmpm.setSelection(0);
-        }
-        if(tvToTime.getText().toString().contains("P") ||tvToTime.getText().toString().contains("p")){
-            spinToAmpm.setSelection(1);
-        }else if(tvToTime.getText().toString().contains("A")|| tvToTime.getText().toString().contains("a")){
-            spinToAmpm.setSelection(0);
-        }
+        tvFromTime.setText(getIntent().getStringExtra("frmtim").toLowerCase().replace("am","").replace("pm",""));
+        tvToTime.setText(getIntent().getStringExtra("totim").toLowerCase().replace("am","").replace("pm",""));
         etAirport.setText(getIntent().getStringExtra("airport"));
         etPrice.setText(getIntent().getStringExtra("price"));
+
+        String stops[]=getResources().getStringArray(R.array.stops);
+        String tdays[]=getResources().getStringArray(R.array.tdays);
+        String routeType[]=getResources().getStringArray(R.array.route);
+        String totalHours[]=getResources().getStringArray(R.array.totalhours);
+        String airways[]=getResources().getStringArray(R.array.airways);
+
+        for(int i=1;i<stops.length;i++){
+            if(Integer.parseInt(stops[i])==Integer.parseInt(getIntent().getStringExtra("stops"))){
+                spinStops.setSelection(i);
+            }
+        }
+        for(int i=1;i<routeType.length;i++){
+           // if(routeType[i].equals(getIntent().getStringExtra("route"))){
+                    spinRoute.setSelection(1); //one way is default
+           // }
+        }
+        for(int i=1;i<tdays.length;i++){
+            if(containsSameDays(tdays[i],getIntent().getStringExtra("tdays"))){
+                spinTotalDays.setSelection(i);
+            }
+        }
+        for(int i=1;i<totalHours.length;i++){
+            if(totalHours[i].contains(""+Integer.parseInt(getIntent().getStringExtra("layour").replace(" ","").toLowerCase().replace("hours","")))){
+                spinTotalHours.setSelection(i);
+            }
+        }
+        for(int i=1;i<airways.length;i++){
+            if(airways[i].toLowerCase().replace(" ","").contains(""+getIntent().getStringExtra("airways").toLowerCase().replace(" ",""))){
+                spinAirways.setSelection(i);
+            }
+        }
+        if(getIntent().getStringExtra("frmtim").toLowerCase().contains("p")){
+            spinFromAmpm.setSelection(1);
+        }else if(getIntent().getStringExtra("frmtim").toLowerCase().contains("a")){
+            spinFromAmpm.setSelection(0);
+        }
+        if(getIntent().getStringExtra("totim").toLowerCase().contains("p")){
+            spinToAmpm.setSelection(1);
+        }else if(getIntent().getStringExtra("totim").toLowerCase().contains("a")){
+            spinToAmpm.setSelection(0);
+        }
 
         btnEditRoute=(Button)findViewById(R.id.btnAddHotel);
         btnEditRoute.setOnClickListener(new View.OnClickListener() {
@@ -110,6 +143,17 @@ public class EditRouteActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    public boolean containsSameDays(String first,String second){
+        String[] dayOne=first.replace(" ","").split("-");
+        String[] daySecond=second.replace(" ","").split("-");
+        if(dayOne[0].equalsIgnoreCase(daySecond[0])&&dayOne[1].equalsIgnoreCase(daySecond[1]))
+            return true;
+        else
+            return false;
+    }
+
 
     public  void editRoute() {
 
@@ -125,28 +169,14 @@ public class EditRouteActivity extends AppCompatActivity {
                 etDestination.getSelectedItem().toString(),
                 etAirport.getText().toString(),
                 spinAirways.getSelectedItem().toString(),
-                fromtime,
-                totime,
+                fromtime+fromAmPm,
+                totime+toAmPm,
                 spinTotalDays.getSelectedItem().toString(),
                 spinRoute.getSelectedItem().toString(),
                 spinStops.getSelectedItem().toString(),
                 spinTotalHours.getSelectedItem().toString(),
                 rid,
                 etPrice.getText().toString());
-
-        //                @Query("source") String source,
-//                @Query("destination") String destination,
-//                @Query("airport") String airport,
-//                @Query("airways") String airways,
-//                @Query("frmtim") String frmtim,
-//                @Query("totim") String totim,
-//                @Query("tdays") String tdays,
-//                @Query("type") String type,
-//                @Query("stops") String stops,
-//                @Query("layour") String layour,
-//                @Query("rid") String rid,
-//                @Query("price") String price);
-
 
         call.enqueue(new Callback<ResponseData>() {
             @Override
@@ -179,9 +209,18 @@ public class EditRouteActivity extends AppCompatActivity {
         mTimePicker = new TimePickerDialog(EditRouteActivity.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                tvFromTime.setText(selectedHour + ":" + selectedMinute);
+
+                if(selectedHour>12){
+                    selectedHour=selectedHour-12;
+                    fromAmPm="PM";
+                    spinFromAmpm.setSelection(1);
+                }else{
+                    fromAmPm="AM";
+                    spinFromAmpm.setSelection(0);
+                }
+                tvFromTime.setText(selectedHour+ ":" + selectedMinute+"");
             }
-        }, hour, minute, true);//Yes 24 hour time
+        }, hour, minute, false);//Yes 24 hour time
         mTimePicker.setTitle("Select Time");
         mTimePicker.show();
 
@@ -197,9 +236,17 @@ public class EditRouteActivity extends AppCompatActivity {
         mTimePicker = new TimePickerDialog(EditRouteActivity.this, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                tvToTime.setText(selectedHour + ":" + selectedMinute);
+                if(selectedHour>12){
+                    selectedHour=selectedHour-12;
+                    toAmPm="PM";
+                    spinToAmpm.setSelection(1);
+                }else{
+                    toAmPm="AM";
+                    spinToAmpm.setSelection(0);
+                }
+                tvToTime.setText(selectedHour+ ":" + selectedMinute+"");
             }
-        }, hour, minute, true);//Yes 24 hour time
+        }, hour, minute, false);//Yes 24 hour time
         mTimePicker.setTitle("Select Time");
         mTimePicker.show();
 

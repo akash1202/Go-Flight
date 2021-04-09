@@ -18,9 +18,9 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         splashImage=(LinearLayout)findViewById(R.id.splashImage);
-        final int ScreenDisplay = 3000;
+        final int ScreenDisplay = 2000;
         anim = AnimationUtils.loadAnimation(this, R.anim.initial_anim);
-        anim.setDuration(3000);
+        anim.setDuration(2000);
         anim.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {

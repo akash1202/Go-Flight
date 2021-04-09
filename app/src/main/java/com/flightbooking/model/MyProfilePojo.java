@@ -3,10 +3,10 @@ package com.flightbooking.model;
 import com.google.gson.annotations.SerializedName;
 
 public class MyProfilePojo {
-    @SerializedName("firstname")
+    @SerializedName("fname")
     public String firstname;
 
-    @SerializedName("lastname")
+    @SerializedName("lname")
     public String lastname;
 
     @SerializedName("email")

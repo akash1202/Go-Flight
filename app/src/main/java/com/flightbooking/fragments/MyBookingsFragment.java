@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,7 @@ import com.flightbooking.api.RetroClient;
 import com.flightbooking.model.BookingsPojo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;
@@ -76,6 +78,9 @@ public class MyBookingsFragment extends Fragment {
                     Toast.makeText(getContext(), "No data found", Toast.LENGTH_SHORT).show();
                 } else {
                     hotelInfo = response.body();
+                    for(BookingsPojo pojo :response.body()){
+                        Log.d("booking pojo---> ",pojo.toString());
+                    }
                     myBookingsFragmentAdapter=new MyBookingsFragmentAdapter(hotelInfo,getContext());
                     list_view.setAdapter(myBookingsFragmentAdapter);
                     //list_view.setAdapter(new HotelFragmentAdapter(hotelInfo, getContext()));

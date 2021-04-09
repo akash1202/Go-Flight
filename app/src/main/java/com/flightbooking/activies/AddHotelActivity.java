@@ -22,6 +22,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.flightbooking.R;
 import com.flightbooking.api.ApiService;
 import com.flightbooking.model.ResponseData;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.File;
 import java.util.HashMap;
@@ -46,7 +48,7 @@ public class AddHotelActivity extends AppCompatActivity implements EasyPermissio
     private static final String TAG = AddHotelActivity.class.getSimpleName();
     private static final int REQUEST_GALLERY_CODE = 200;
     private static final int READ_REQUEST_CODE = 300;
-    private static final String SERVER_PATH = "http://bookingflight.info/";
+    private static final String SERVER_PATH = "https://goflightinfo.000webhostapp.com/";
     private Uri uri;
 
     @Override
@@ -135,6 +137,7 @@ public class AddHotelActivity extends AppCompatActivity implements EasyPermissio
         pd.setTitle("Loading");
         pd.show();
         Map<String, String> map = new HashMap<>();
+        map.put("hid","-1");
         map.put("name", etHotelName.getText().toString());
         map.put("country", etCountry.getText().toString());
         map.put("city", etCity.getText().toString());
@@ -146,9 +149,12 @@ public class AddHotelActivity extends AppCompatActivity implements EasyPermissio
         RequestBody mFile = RequestBody.create(MediaType.parse("image/*"), file);
         MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file", file.getName(), mFile);
         RequestBody filename = RequestBody.create(MediaType.parse("text/plain"), file.getName());
+        Gson gson=new GsonBuilder()
+                .setLenient()
+                .create();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(SERVER_PATH)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
         ApiService uploadImage = retrofit.create(ApiService.class);
         Call<ResponseData> fileUpload = uploadImage.addhotel(fileToUpload, map);
@@ -164,7 +170,8 @@ public class AddHotelActivity extends AppCompatActivity implements EasyPermissio
             @Override
             public void onFailure(Call<ResponseData> call, Throwable t) {
                 pd.dismiss();
-                Toast.makeText(AddHotelActivity.this, "Error" + t.getMessage(), Toast.LENGTH_LONG).show();
+                Log.e("Error add hotel : ",t.getMessage());
+                //Toast.makeText(AddHotelActivity.this, "Error" + t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
 

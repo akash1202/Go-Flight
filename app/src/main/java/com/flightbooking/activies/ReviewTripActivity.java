@@ -90,7 +90,7 @@ public class ReviewTripActivity extends AppCompatActivity {
         tvDay.setText(getIntent().getStringExtra("day"));
         tvAirways.setText(getIntent().getStringExtra("airways"));
         tvPrice.setText(getIntent().getStringExtra("price") + "$");
-        tvCabineconomy.setText("Economy Type:  " + getIntent().getStringExtra("classtype"));
+        tvCabineconomy.setText("Class :  " + getIntent().getStringExtra("classtype"));
 
         tvChooseDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,7 +116,7 @@ public class ReviewTripActivity extends AppCompatActivity {
 
 
                 if (tvChooseDate.getText().toString().isEmpty()) {
-                    Toast.makeText(ReviewTripActivity.this, "Please chose date", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ReviewTripActivity.this, "Please choose date", Toast.LENGTH_SHORT).show();
                     return;
                 }
 //                Intent intent = new Intent(ReviewTripActivity.this, PaymentDetailsActivity.class);
@@ -146,7 +146,7 @@ public class ReviewTripActivity extends AppCompatActivity {
         final String total = totalmoney;
 
         progressDialog = new ProgressDialog(ReviewTripActivity.this);
-        progressDialog.setMessage("Please Wait we are rediricting to Payment....");
+        progressDialog.setMessage("Please Wait we are redirecting to Payment....");
         progressDialog.show();
 
         ApiService service = RetroClient.getRetrofitInstance().create(ApiService.class);
@@ -165,7 +165,6 @@ public class ReviewTripActivity extends AppCompatActivity {
                     intent.putExtra("Id",rid);
                     startActivity(intent);
                     finish();
-
                 } else {
                     Toast.makeText(ReviewTripActivity.this, response.body().message, Toast.LENGTH_LONG).show();
                 }

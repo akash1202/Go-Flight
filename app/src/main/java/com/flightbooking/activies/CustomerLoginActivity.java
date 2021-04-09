@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -98,6 +99,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
                     startActivity(new Intent(CustomerLoginActivity.this, CustomerDasboardActivity.class));
                     finish();
                 } else {
+                    Log.e("Customer login",response.body().message);
                     Toast.makeText(CustomerLoginActivity.this, response.body().message, Toast.LENGTH_LONG).show();
                 }
             }
@@ -105,6 +107,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<ResponseData> call, Throwable t) {
                 pd.dismiss();
+                Log.e("Customer login",t.getCause()+" \n "+t.getMessage());
                 Toast.makeText(CustomerLoginActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });

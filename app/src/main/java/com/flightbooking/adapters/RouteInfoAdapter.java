@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.flightbooking.R;
 import com.flightbooking.activies.AdminDashboardActivity;
 import com.flightbooking.activies.EditRouteActivity;
@@ -27,9 +29,9 @@ import retrofit2.Response;
 
 public class RouteInfoAdapter extends BaseAdapter {
     List<RouteInfoPojo> routeInfoPojo;
-    Context cnt;
+    AppCompatActivity cnt;
 
-    public RouteInfoAdapter(List<RouteInfoPojo> routeInfoPojo, Context cnt) {
+    public RouteInfoAdapter(List<RouteInfoPojo> routeInfoPojo, AppCompatActivity cnt) {
         this.routeInfoPojo = routeInfoPojo;
         this.cnt = cnt;
     }
@@ -107,6 +109,7 @@ public class RouteInfoAdapter extends BaseAdapter {
                 intent.putExtra("rid",routeInfoPojo.get(pos).getRid());
                 intent.putExtra("price",routeInfoPojo.get(pos).getPrice());
                 cnt.startActivity(intent);
+                cnt.finish();
             }
         });
 

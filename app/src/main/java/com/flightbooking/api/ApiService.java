@@ -19,6 +19,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.PartMap;
 import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 
 
 public interface ApiService {
@@ -37,17 +38,19 @@ public interface ApiService {
             @Query("pass") String pass);
 
 
-    @GET("/flight/addHotel.php?")
+    @GET("/flight/addhotel.php?")
     Call<ResponseData> addHotel(
+            @Query("hid") String hid,
             @Query("name") String name,
             @Query("country") String country,
-            @Query("provience") String provience,
+            @Query("province") String province,
             @Query("city") String city,
-            @Query("code") String code,
+            @Query("pcode") String code,
             @Query("price") String price);
 
-    @GET("/flight/addroutes.php?")
+    @GET("/flight/editroute.php?")
     Call<ResponseData> addroutes(
+            @Query("rid") String rid,
             @Query("source") String source,
             @Query("destination") String destination,
             @Query("airport") String airport,
@@ -97,20 +100,20 @@ public interface ApiService {
     Call<List<RouteInfoPojo>> getroutes();
 
 
-    @GET("flight/searchflight.php?")
+    @GET("/flight/searchflight.php?")
     Call<List<AvailableFlightsPojo>> getAvailableFlightRoutes(
             @Query("source") String source,
             @Query("destination") String destination,
             @Query("type") String type);
 
-    @GET("flight/forgotPassword.php")
+    @GET("flight/forgotPassword.php?")
     Call<ResponseData> forgotPassword(@Query("email") String emailid);
 
     @Multipart
     @POST("flight/addhotel.php")
     Call<ResponseData> addhotel(
             @Part MultipartBody.Part file,
-            @PartMap Map<String, String> partMap
+            @QueryMap Map<String, String> partMap
     );
 
     @GET("/flight/booking.php?")

@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
 import com.flightbooking.R;
 import com.flightbooking.activies.AdminDashboardActivity;
@@ -29,11 +31,12 @@ import retrofit2.Response;
 
 public class HotelInfoAdapter extends BaseAdapter {
     List<HotelInfoPojo> hotelInfo;
-    Context cnt;
-    String imgUrl="http://bookingflight.info/flight/";
+    AppCompatActivity cnt;
+    //String imgUrl="http://bookingflight.info/flight";
+    String imgUrl="https://goflightinfo.000webhostapp.com/flight/";
 
 
-    public HotelInfoAdapter(List<HotelInfoPojo> hotelInfo, Context cnt) {
+    public HotelInfoAdapter(List<HotelInfoPojo> hotelInfo, AppCompatActivity cnt) {
         this.hotelInfo = hotelInfo;
         this.cnt = cnt;
     }
@@ -99,10 +102,12 @@ public class HotelInfoAdapter extends BaseAdapter {
                 intent.putExtra("city",hotelInfo.get(pos).getCity());
                 intent.putExtra("province",hotelInfo.get(pos).getProvince());
                 intent.putExtra("country",hotelInfo.get(pos).getCountry());
-                intent.putExtra("postalcode",hotelInfo.get(pos).getPcode());
+                intent.putExtra("pcode",hotelInfo.get(pos).getPcode());
                 intent.putExtra("price",hotelInfo.get(pos).getPrice());
                 intent.putExtra("photo",hotelInfo.get(pos).getPhoto());
+                intent.putExtra("web",hotelInfo.get(pos).getWeb());
                 cnt.startActivity(intent);
+                cnt.finish();
             }
         });
 

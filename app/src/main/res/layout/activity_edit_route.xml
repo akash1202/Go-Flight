@@ -258,7 +258,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginRight="13dp"
             android:background="@drawable/edittext_rounded"
-            android:entries="@array/days"
+            android:entries="@array/tdays"
             android:padding="@dimen/_8ssp"
             android:scrollbars="none"
             android:singleLine="true"
